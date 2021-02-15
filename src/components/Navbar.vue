@@ -2,7 +2,7 @@
   <div class="hello">
    <nav class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light">
      <div class="container">
-        <a class="navbar-brand" href="#">Vue Shop</a>
+        <router-link class="navbar-brand" to="/">HeyGo</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,8 +10,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <router-link to="/home" class="nav-link">Home</router-link>
+              <router-link to="/" class="nav-link">Home</router-link>
             </li>
+            <li class="nav-item">
+              <router-link to="/products" class="nav-link" href="#">Products</router-link>
+            </li>
+
             <li class="nav-item">
               <router-link to="/about" class="nav-link" href="#">About</router-link>
             </li>
@@ -43,10 +47,9 @@ export default {
   @media (min-width: 992px) { 
     
     .navbar.custom-nav{
-      top:16px;
-      background-color: transparent !important;
+      padding-top:16px;
+      padding-bottom:16px;
+      background-color: #fff !important;
     }
-
    }
-
 </style>

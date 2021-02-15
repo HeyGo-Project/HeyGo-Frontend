@@ -1,24 +1,23 @@
 <template>
   <div class="home">
-      <MainPage/>
-
-      Products  
+    <MainPage />
+    <section>
+      <Products/>
+    </section>
+    Products
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import MainPage from "@/components/MainPage.vue";
-
+import Products from "@/sections/Products.vue";
 export default {
   name: "home",
   components: {
-    MainPage
-  }
+    MainPage,
+    Products,
+  },
 };
 </script>
-
-<style>
-
-</style>
 
