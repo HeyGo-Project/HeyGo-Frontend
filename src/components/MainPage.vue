@@ -6,11 +6,11 @@
           <div class="main-content">
             <h1 class="main-title">Welcome to HeyGo!</h1>
             <p>
-              Explore the world, broaden your mind and make new friends with the
+              Explore the word, broaden your mind and make new friends with a
               first app supporting both booking and guiding service just for
               You!
             </p>
-            <div class="main-btn mt-5">
+            <div class="main-btn mt-7">
               <button class="btn custom-btn btn-info mr-4">Explore</button>
               <button class="btn custom-btn btn-outline-secondary">
                 Products
@@ -18,9 +18,19 @@
             </div>
           </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-6">
           <div class="graphic">
-            <img src="/img/svg/graphic.svg" alt="" />
+            <img
+              src="/img/svg/travel.svg"
+              style="
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                vertical-align: middle;
+                overflow: hidden;
+                padding: 2rem
+              "
+            />
           </div>
         </div>
       </div>
@@ -44,5 +54,7 @@ export default {
   width: 100%;
   height: 500px;
   text-align: left;
+}
+.graphic {
 }
 </style>

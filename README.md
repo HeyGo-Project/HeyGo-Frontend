@@ -1,4 +1,4 @@
-# vue-shop
+# HeyGO
 
 ## Project setup
 ```
