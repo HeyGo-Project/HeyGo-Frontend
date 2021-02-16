@@ -4,7 +4,7 @@
       class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light"
     >
       <div class="container">
-        <router-link class="navbar-brand" to="/home">HeyGo</router-link>
+        <router-link class="navbar-brand" to="/">HeyGo</router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -26,14 +26,11 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0">
-              Get Start
+            <button class="btn btn-outline-success my-2 mr-sm-2">
+              Login
+            </button>
+            <button class="btn btn-outline-primary my-2 my-sm-0">
+              Register
             </button>
           </form>
         </div>
@@ -50,10 +47,10 @@ export default {
       nav: [
         {
           link: "/services",
-          text: "Products"
+          text: "Services"
         },
         {
-          link: "/about",
+          link: "/footer",
           text: "About"
         },
       ]

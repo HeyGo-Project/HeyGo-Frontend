@@ -1,8 +1,8 @@
-<template>
-  <div class="footer">
+<template >
+  <div class="footer" >
     <!-- Footer -->
-    <footer class="bg-white d-flex flex-column">
-      <div class="container py-5">
+    <footer class="bg-white d-flex flex-column" >
+      <div class="container py-5" >
         <div class="row py-4">
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <img src="img/logo.png" alt="" width="180" class="mb-3" />
@@ -76,6 +76,7 @@ export default {
 </script>
 
 <style>
+
 #button-addon1 {
   color: #ffc371;
 }
