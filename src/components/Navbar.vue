@@ -19,19 +19,19 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item" v-for="navs in nav" :key="nav.text">
+            <li class="nav-item" v-for="navs in nav" :key="navs.text">
               <router-link :to="navs.link" class="nav-link" href="#">
                 {{ navs.text }}
               </router-link>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-success my-2 mr-sm-2">
+            <a class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" data-target="#login">
               Login
-            </button>
-            <button class="btn btn-outline-primary my-2 my-sm-0">
+            </a>
+            <a class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#login">
               Register
-            </button>
+            </a>
           </form>
         </div>
       </div>

@@ -1,8 +1,8 @@
 <template >
-  <div class="footer" >
+  <div class="footer">
     <!-- Footer -->
-    <footer class="bg-white d-flex flex-column" >
-      <div class="container py-5" >
+    <footer class="bg-white d-flex flex-column">
+      <div class="container py-5">
         <div class="row py-4">
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <img src="img/logo.png" alt="" width="180" class="mb-3" />
@@ -14,19 +14,16 @@
           <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
             <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2"><a href="#" class="text-muted">Guides</a></li>
-              <li class="mb-2"><a href="#" class="text-muted">Flights</a></li>
-              <li class="mb-2"><a href="#" class="text-muted">Hotels</a></li>
+              <li class="mb-2" v-for="service in services" :key="service.title">
+                <a href="#" class="text-muted">{{ service.title }} </a>
+              </li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
             <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
-              <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
-              <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
-              <li class="mb-2">
-                <a href="#" class="text-muted">Our Products</a>
+              <li class="mb-2" v-for="comp in company" :key="comp.title">
+                <a href="#" class="text-muted">{{ comp.title }}</a>
               </li>
             </ul>
           </div>
@@ -70,13 +67,38 @@
 <script>
 export default {
   data() {
-    return {};
-  }
+    return {
+      services: [
+        {
+          title: "Guides",
+        },
+        {
+          title: "Flights",
+        },
+        {
+          title: "Hotels",
+        },
+      ],
+      company: [
+        {
+          title: "Login",
+        },
+        {
+          title: "Register",
+        },
+        {
+          title: "Wishlist",
+        },
+        {
+          title: "Our Products",
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style>
-
 #button-addon1 {
   color: #ffc371;
 }
