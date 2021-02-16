@@ -2,10 +2,20 @@
   <div id="app">
     <Navbar></Navbar>
     <router-view/>
+    <hr>
 
+    <Footer/>
   </div>
 </template>
 
+<script>
+import Footer from "@/sections/Footer";
+export default {
+  components:{
+    Footer
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: 'Nunito', sans-serif;

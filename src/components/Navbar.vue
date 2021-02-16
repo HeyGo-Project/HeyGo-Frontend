@@ -55,7 +55,7 @@ export default {
         {
           link: "/about",
           text: "About"
-        }
+        },
       ]
     };
   },
