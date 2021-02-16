@@ -1,41 +1,64 @@
 <template>
   <div class="hello">
-   <nav class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light">
-     <div class="container">
-        <router-link class="navbar-brand" to="/">HeyGo</router-link>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav
+      class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light"
+    >
+      <div class="container">
+        <router-link class="navbar-brand" to="/home">HeyGo</router-link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <router-link to="/" class="nav-link">Home</router-link>
+            <li class="nav-item" v-for="navs in nav" :key="nav.text">
+              <router-link :to="navs.link" class="nav-link" href="#">
+                {{ navs.text }}
+              </router-link>
             </li>
-            <li class="nav-item">
-              <router-link to="/products" class="nav-link" href="#">Products</router-link>
-            </li>
-
-            <li class="nav-item">
-              <router-link to="/about" class="nav-link" href="#">About</router-link>
-            </li>
-          
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0">Get Start</button>
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0">
+              Get Start
+            </button>
           </form>
         </div>
-
-     </div>
-</nav>
-    
+      </div>
+    </nav>
   </div>
 </template>
 
 <script>
 export default {
   name: "Navbar",
+  data() {
+    return {
+      nav: [
+        {
+          link: "/services",
+          text: "Products"
+        },
+        {
+          link: "/about",
+          text: "About"
+        }
+      ]
+    };
+  },
   props: {
     msg: String
   }
@@ -44,12 +67,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  @media (min-width: 992px) { 
-    
-    .navbar.custom-nav{
-      padding-top:16px;
-      padding-bottom:16px;
-      background-color: #fff !important;
-    }
-   }
+@media (min-width: 992px) {
+  .navbar.custom-nav {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: #fff !important;
+  }
+}
 </style>

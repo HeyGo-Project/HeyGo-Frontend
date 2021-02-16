@@ -14,7 +14,7 @@
 import MainPage from "@/components/MainPage.vue";
 import Products from "@/sections/Products.vue";
 import About from "@/sections/About.vue"
-export default {
+export default  {
   name: "home",
   components: {
     MainPage,
