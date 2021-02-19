@@ -27,10 +27,7 @@
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <a class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" data-target="#login">
-              Login
-            </a>
-            <a class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#login">
-              Register
+              Sign up
             </a>
           </form>
         </div>

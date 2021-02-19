@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import jQuery from 'jquery';
+import Vuelidate from 'vuelidate'
 
 window.$ = window.jQuery = jQuery;
 
@@ -10,6 +11,7 @@ import 'bootstrap';
 import './assets/app.scss';
 
 Vue.component('Navbar', require('./components/Navbar.vue').default);
+Vue.use(Vuelidate)
 
 Vue.config.productionTip = false;
 

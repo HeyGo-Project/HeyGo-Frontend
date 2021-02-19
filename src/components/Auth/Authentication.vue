@@ -2,7 +2,7 @@
   <div class="login">
     <!-- Modal -->
     <div
-      class="modal fade"
+      class="modal fade "
       id="login"
       tabindex="-1"
       role="dialog"
@@ -42,35 +42,46 @@
                 >
               </li>
             </ul>
-
             <div class="tab-content" id="pills-tabContent">
-              <div
+              <form
                 class="tab-pane fade show active"
                 id="pills-login"
-                role="tabpanel"
+                role="form"
                 aria-labelledby="pills-login-tab"
+                @submit.prevent="submitHandler"
               >
                 <h5 class="text-center">Login Please</h5>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
+                    v-model.trim="email"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
+                    :class="{
+                      invalid:
+                        ($v.email.$dirty && !$v.email.required) ||
+                        ($v.email.$dirty && !$v.email.email)
+                    }"
                   />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
                   <input
                     type="password"
+                    v-model.trim="password"
                     class="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
                   />
                 </div>
-              </div>
+                <div class="form-group">
+                  <button class="btn btn-primary" type="submit">Login</button>
+                </div>
+              </form>
+
               <div
                 class="tab-pane fade"
                 id="pills-register"
@@ -78,24 +89,54 @@
                 aria-labelledby="pills-register-tab"
               >
                 <h5 class="text-center">Create New Account</h5>
+
+                <div class="form-group">
+                  <label for="name">Your name</label>
+                  <input
+                    type="text"
+                    v-model="name"
+                    class="form-control"
+                    id="name"
+                    placeholder="Your nice name"
+                  />
+                </div>
+
                 <div class="form-group">
                   <label for="email">Email address</label>
                   <input
-                    type="email"
+                    v-model="email"
                     class="form-control"
                     id="email"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
+
                   />
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
                   <input
                     type="password"
+                    v-model="password"
                     class="form-control"
                     id="password"
                     placeholder="Password"
                   />
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    v-model="password"
+                    class="form-control"
+                    id="retype-password"
+                    placeholder="Re-type your password"
+                  />
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary" @click="register">
+                    Signup
+                  </button>
                 </div>
               </div>
             </div>
@@ -107,14 +148,46 @@
 </template>
 
 <script>
+import {
+  email,
+  required,
+  minLength,
+  maxLength
+} from "vuelidate/lib/validators";
 export default {
-  name: "Login",
-  props: {
-    msg: String,
+  name: "Auth",
+
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      birthDate: ""
+    };
   },
+  validations: {
+    email: {
+      email: { email, required }
+    },
+    password: {
+      password: { required, minLength: minLength(6), maxLength: maxLength(16) }
+    }
+  },
+  methods: {
+    submitHandler() {
+      if (this.$v.invalid) {
+        this.$v.$touch();
+        return;
+      }
+    }
+  }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.modal-dialog {
+  width: 400px;
+}
 </style>
