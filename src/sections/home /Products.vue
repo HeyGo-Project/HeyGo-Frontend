@@ -1,7 +1,7 @@
 <template>
   <div class="products" id="products">
     <div class="container">
-      <h1 class="text-center p-4">Our Services</h1>
+      <h1 class=" oservice text-center p-4">Our Services</h1>
       <div class="row">
         <div
           class="col-md-4"
@@ -20,7 +20,9 @@
             <div class="card-body">
               <h5 class="card-title">{{ services.title }}</h5>
               <p class="card-text">{{ services.info }}</p>
-              <a href="#" class="btn btn-primary">Go To...</a>
+              <router-link :to="services.link" class="btn btn-primary">
+                Go to...
+              </router-link>
             </div>
           </div>
         </div>
@@ -40,16 +42,19 @@ export default {
           title: "Hotels",
           info: "Lorem ipsum dolor sit amet.",
           img: "/img/products/club-room.jpg",
+          link: "/hotels"
         },
         {
           title: "Flights",
           info: "Lorem ipsum dolor sit amet.",
           img: "/img/products/airplane.jpg",
+          link: "/flights"
         },
         {
           title: "Guides",
           info: "Lorem ipsum dolor sit amet.",
           img: "/img/products/tour-guide.jpg",
+          link: "/guides"
         },
       ],
     };

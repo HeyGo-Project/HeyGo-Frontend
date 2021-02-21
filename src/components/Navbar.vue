@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item" v-for="navs in nav" :key="navs.text">
-              <router-link :to="navs.link" class="nav-link" href="#">
+              <router-link :to="navs.link" class="nav-link">
                 {{ navs.text }}
               </router-link>
             </li>
@@ -47,7 +47,7 @@ export default {
           text: "Services"
         },
         {
-          link: "/footer",
+          link: "/about",
           text: "About"
         },
       ]

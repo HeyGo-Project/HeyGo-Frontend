@@ -30,7 +30,7 @@
                 overflow: hidden;
                 padding: 2rem
               "
-            />
+             alt=""/>
           </div>
         </div>
       </div>
