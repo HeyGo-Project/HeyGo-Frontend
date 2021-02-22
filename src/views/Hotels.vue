@@ -1,6 +1,6 @@
 <template>
   <div class="hotels">
-    <Booking/>
+    <Booking />
 
   </div>
 </template>
@@ -9,8 +9,8 @@
 import Booking from "@/sections/hotel/Booking";
 export default {
   name: "Hotels",
-  components:{
-    Booking
+  components: {
+    Booking,
   },
   data() {
     return {};

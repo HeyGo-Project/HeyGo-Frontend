@@ -3,8 +3,6 @@
     <div class="section-center">
       <div class="container">
         <div class="row">
-
-            
           </div>
           <div class="booking-form">
             <form>
@@ -65,7 +63,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -95,6 +92,7 @@ export default {
   right: 0;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+
 }
 
 #booking {
@@ -118,22 +116,23 @@ export default {
   border: 0.5px solid #F8F6FE;
   background: #fff;
   border-radius: 2px;
+
 }
 
 .booking-form>form .row.no-margin {
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .booking-form>form .row.no-margin>[class*="col-"] {
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .booking-form .form-group {
   position: relative;
   padding: 25px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .booking-form .form-group:after {
@@ -142,14 +141,14 @@ export default {
   position: absolute;
   top: 25px;
   bottom: 0;
-  right: 0px;
+  right: 0;
   width: 2px;
   height: 75px;
 }
 
 .booking-form .form-control {
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 0;
   border: none;
   height: 50px;
   -webkit-box-shadow: none;
@@ -161,19 +160,19 @@ export default {
 }
 
 .booking-form .form-control::-webkit-input-placeholder {
-  color: #818390;
+  color: #01A4B6;
 }
 
 .booking-form .form-control:-ms-input-placeholder {
-  color: #818390;
+  color: #01A4B6;
 }
 
 .booking-form .form-control::placeholder {
-  color: #818390;
+  color: #01A4B6;
 }
 
 .booking-form input[type="date"].form-control:invalid {
-  color: #818390;
+  color: #01A4B6;
 }
 
 .booking-form select.form-control {
@@ -191,7 +190,7 @@ export default {
   height: 32px;
   text-align: center;
   pointer-events: none;
-  color: #818390;
+  color: #01A4B6;
   font-size: 14px;
 }
 
@@ -227,4 +226,5 @@ export default {
   font-weight: 400;
   color: #fff;
 }
+
 </style>

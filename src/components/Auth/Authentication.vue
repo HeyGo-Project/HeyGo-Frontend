@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-    <!-- Modal -->
     <div
       class="modal fade "
       id="login"
@@ -125,7 +124,7 @@
 
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input
+                  <label for="retype-password"></label><input
                     type="password"
                     v-model="password"
                     class="form-control"

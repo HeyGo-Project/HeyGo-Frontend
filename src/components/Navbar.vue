@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="navbar">
     <nav
       class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light"
     >
@@ -25,15 +25,17 @@
               </router-link>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
             <a class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" data-target="#login">
               Sign up
             </a>
-          </form>
         </div>
+
       </div>
+
     </nav>
+
   </div>
+
 </template>
 
 <script>
