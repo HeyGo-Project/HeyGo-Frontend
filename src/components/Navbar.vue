@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar" >
+  <div class="navbar">
     <nav
       class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light"
     >
@@ -25,10 +25,10 @@
               </router-link>
             </li>
           </ul>
-<!--            <a class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" data-target="#login">-->
-<!--              Sign up-->
-<!--            </a>-->
-                <router-link class="btn btn-outline-success my-2 mr-sm-2" to="/auth">Sign in</router-link>
+            <a class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" data-target="#login">
+              Sign up
+            </a>
+<!--            <router-link class="btn btn-outline-success my-2 mr-sm-2" to="/auth">Sign in</router-link>-->
         </div>
 
       </div>
