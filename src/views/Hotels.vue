@@ -1,7 +1,6 @@
 <template>
   <div class="hotels">
     <Booking />
-
   </div>
 </template>
 

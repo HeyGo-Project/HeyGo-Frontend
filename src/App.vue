@@ -1,34 +1,37 @@
 <template>
-  <div id="app" >
-    <Navbar ></Navbar>
-    <router-view />
-    <hr>
-    <Footer />
-
+  <div id="app">
+    <router-view/>
+    <Navbar></Navbar>
+    <hr/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Footer from "@/sections/Footer";
+
 export default {
-  components:{
+  components: {
     Footer
   }
-}
+};
 </script>
 <style lang="scss">
 #app {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
+
 #nav {
   padding: 30px;
+
   a {
     font-weight: bold;
     color: #2c3e50;
+
     &.router-link-exact-active {
       color: #42b983;
     }
