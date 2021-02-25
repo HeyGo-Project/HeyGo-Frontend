@@ -2,7 +2,6 @@
   <div id="app">
     <router-view/>
     <Navbar></Navbar>
-    <hr/>
     <Footer/>
   </div>
 </template>
@@ -37,4 +36,7 @@ export default {
     }
   }
 }
+
+
+
 </style>
