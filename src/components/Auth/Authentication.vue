@@ -95,10 +95,10 @@
                   <label for="name">Your name</label>
                   <input
                     type="text"
-                    v-model="name"
+                    v-model="firstName"
                     class="form-control"
                     id="name"
-                    placeholder="Your nice name"
+                    placeholder="Enter name"
                     required
                   />
                 </div>
@@ -115,6 +115,17 @@
                   />
                 </div>
                 <div class="form-group">
+                  <label for="birth-date">Birth date</label>
+                  <input
+                    type="date"
+                    v-model="birthDate"
+                    class="form-control"
+                    id="birth-date"
+                    placeholder="Birth date"
+                    required
+                  />
+                </div>
+                <div class="form-group">
                   <label for="password">Password</label>
                   <input
                     type="password"
@@ -127,11 +138,11 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password</label>
+                  <label for="password">Re-type Password</label>
                   <label for="retype-password"></label
                   ><input
                     type="password"
-                    v-model="password"
+                    v-model="retypePassword"
                     class="form-control"
                     id="retype-password"
                     placeholder="Re-type your password"
@@ -139,7 +150,11 @@
                   />
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-primary" type="submit">
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    @click="register"
+                  >
                     Signup
                   </button>
                 </div>
@@ -159,7 +174,7 @@ import {
   minLength,
   maxLength
 } from "vuelidate/lib/validators";
-import firebase from "../../firebase"
+import {fb} from "../../firebase";
 export default {
   name: "Auth",
 
@@ -168,9 +183,10 @@ export default {
       firstName: "",
       lastName: "",
       phoneNumber: "",
-      email: "",
-      password: "",
-      birthDate: ""
+      email: null,
+      password: null,
+      birthDate: "",
+      retypePassword: ""
     };
   },
   validations: {
@@ -183,6 +199,23 @@ export default {
         this.$v.$touch();
         return;
       }
+    },
+    register() {
+      fb
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(userCredential => {
+          // Signed in
+          let user = userCredential.user;
+          $("#login").modal('hide')
+          this.$router.replace('profile')
+          // ...
+        })
+        .catch(error => {
+          let errorCode = error.code;
+          let errorMessage = error.message;
+          // ..
+        });
     }
   }
 };

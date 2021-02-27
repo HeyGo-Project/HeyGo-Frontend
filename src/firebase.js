@@ -1,14 +1,14 @@
 import firebase from "firebase";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBwRxv8K3V4Dl0xjKbFpCKY2tAYBdupkkg",
-  authDomain: "heygowebsite.firebaseapp.com",
-  projectId: "heygowebsite",
-  storageBucket: "heygowebsite.appspot.com",
-  messagingSenderId: "389456535594",
-  appId: "1:389456535594:web:0a6243b42f9c914c032353",
-  measurementId: "G-C4R89R1JMM"
+var firebaseConfig = {
+  apiKey: "AIzaSyDNJ5CzbGE1hg8eMO_Z6uA8WSwfuiKwC1k",
+  authDomain: "heygo-website.firebaseapp.com",
+  projectId: "heygo-website",
+  storageBucket: "heygo-website.appspot.com",
+  messagingSenderId: "708834914223",
+  appId: "1:708834914223:web:57441f24082568e4ec495a",
+  measurementId: "G-3YN249S87J"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+export const fb = firebase.initializeApp(firebaseConfig);
 firebase.analytics();
