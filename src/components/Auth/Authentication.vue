@@ -159,6 +159,7 @@ import {
   minLength,
   maxLength
 } from "vuelidate/lib/validators";
+import firebase from "../../firebase"
 export default {
   name: "Auth",
 
