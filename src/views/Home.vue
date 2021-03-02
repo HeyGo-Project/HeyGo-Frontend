@@ -6,7 +6,7 @@
     </section>
     <About />
     <Login />
-    <hr>
+
   </div>
 </template>
 

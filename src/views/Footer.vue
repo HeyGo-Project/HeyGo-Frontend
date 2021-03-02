@@ -1,6 +1,7 @@
 <template >
   <div class="footer">
     <!-- Footer -->
+    <hr>
     <footer class="bg-white d-flex flex-column">
 
       <div class="container py-5">
@@ -99,7 +100,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+hr{
+margin-bottom: 0px;
+}
 #button-addon1 {
   color: #ffc371;
 }
