@@ -1,9 +1,10 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" >
     <nav
       class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light"
+
     >
-      <div class="container">
+      <div class="container" >
         <router-link class="navbar-brand" to="/">HeyGo</router-link>
         <button
           class="navbar-toggler"

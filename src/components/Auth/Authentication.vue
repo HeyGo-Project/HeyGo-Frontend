@@ -92,13 +92,24 @@
                 <h5 class="text-center">Create New Account</h5>
 
                 <div class="form-group">
-                  <label for="name">Your name</label>
+                  <label for="firstName">Your first name</label>
                   <input
                     type="text"
                     v-model="firstName"
                     class="form-control"
-                    id="name"
-                    placeholder="Enter name"
+                    id="firstName"
+                    placeholder="Enter first name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Your last name</label>
+                  <input
+                    type="text"
+                    v-model="lastName"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Enter last name"
                     required
                   />
                 </div>
@@ -109,6 +120,7 @@
                     v-model="email"
                     class="form-control"
                     id="email"
+
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     required
@@ -186,7 +198,8 @@ export default {
       email: null,
       password: null,
       birthDate: "",
-      retypePassword: ""
+      retypePassword: "",
+
     };
   },
   validations: {
@@ -200,6 +213,7 @@ export default {
         return;
       }
     },
+
     register() {
       fb
         .auth()

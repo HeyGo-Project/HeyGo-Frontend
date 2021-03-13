@@ -1,5 +1,7 @@
 <template >
   <div class="footer">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Footer -->
     <hr>
     <footer class="bg-white d-flex flex-column">
@@ -105,10 +107,10 @@ hr{
 margin-bottom: 0px;
 }
 #button-addon1 {
-  color: #ffc371;
+  color: cyan;
 }
 i {
-  color: #ffc371;
+  color: gray;
 }
 
 .form-control::placeholder {
