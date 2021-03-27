@@ -218,7 +218,6 @@ export default {
   letter-spacing: 1px;
   color: #666;
 }
-
 .nav ul {
   display: flex;
   justify-content: center;
@@ -228,7 +227,6 @@ export default {
   width: 100%;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
-
 .nav ul li {
   padding: 10px;
   width: 100%;
@@ -236,26 +234,85 @@ export default {
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-
 .nav ul li:hover {
   box-shadow: 0px -3px 0px rgb(121, 243, 231) inset;
 }
-
-
 .profile-body {
   width: 100%;
   z-index: -1;
 }
-
 .tab {
   padding: 20px;
   width: 100%;
   text-align: center;
   display: none;
 }
-
 .active {
   box-shadow: 0px -3px 0px rgb(121, 243, 231) inset;
+}
+@media (max-width: 1100px) {
+  .profile-side{
+    width: 250px;
+    padding: 90px 15px 20px;
+  }
+  .profile-img img{
+    height: 200px;
+    width: 200px;
+    left: 50px;
+    top: 50px
+  }
+}
+@media (max-width: 900px) {
+  body{
+    margin: 0 20px;
+  }
+  .profile-header{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .profile-img {
+    float: left;
+    width: 100%;
+    height: 200px;
+  }
+  .profile-img img{
+    position: relative;
+    left: 0;
+  }
+  .profile-nav-info{
+    text-align: center;
+  }
+  .main-bd{
+    flex-direction: column;
+    padding-right: 0px;
+  }
+  .profile-side{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 5px 0;
+  }
+  .profile-nav-info .address{
+    justify-content: center;
+  }
+  .user-rating{
+    justify-content: center;
+  }
+}
 
+@media (max-width: 400px) {
+  .main{
+    margin: 0;
+  }
+  .profile-header h3{
+    font-size: 1.7rem;
+  }
+  .profile-header p{
+    font-size: .9rem;
+  }
+  
 }
 </style>

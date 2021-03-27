@@ -16,3 +16,9 @@ export default {
 name:"Reviews"
 }
 </script>
+
+<style scoped lang="scss">
+.profile-review{
+  text-align: center;
+}
+</style>
