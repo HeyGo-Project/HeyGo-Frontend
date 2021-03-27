@@ -238,7 +238,7 @@ export default {
 }
 
 .nav ul li:hover {
-  box-shadow: 0px -3px 0px rgba(121, 243, 231) inset;
+  box-shadow: 0px -3px 0px rgb(121, 243, 231) inset;
 }
 
 
@@ -252,5 +252,10 @@ export default {
   width: 100%;
   text-align: center;
   display: none;
+}
+
+.active {
+  box-shadow: 0px -3px 0px rgb(121, 243, 231) inset;
+
 }
 </style>
