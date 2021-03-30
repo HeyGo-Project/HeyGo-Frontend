@@ -313,6 +313,6 @@ export default {
   .profile-header p{
     font-size: .9rem;
   }
-  
+
 }
 </style>
