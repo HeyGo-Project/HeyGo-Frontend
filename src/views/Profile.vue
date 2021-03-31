@@ -67,7 +67,7 @@
 
           <div class="profile-body">
             <component :is="selected"></component>
-            <div class="profile-review">
+            <div class="profile-review-top">
 
             </div>
             <div class="profile-settings">
@@ -226,6 +226,7 @@ export default {
   background: #fff;
   width: 100%;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  padding-right: 50px;
 }
 .nav ul li {
   padding: 10px;
