@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Hotels from "@/views/Hotels";
+import Hotel from "@/views/Hotel";
 import Auth from "@/views/Auth";
 import Profile from "@/views/Profile";
 
@@ -20,6 +21,11 @@ export default new Router({
       path: "/hotels",
       name: "hotels",
       component: Hotels
+    },
+    {
+      path: "/hotel",
+      name: "hotel",
+      component: Hotel
     },
     {
       path: "/auth",
