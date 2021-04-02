@@ -83,7 +83,9 @@
         </div>
 
         <div class = "purchase-info">
-          <input type = "number" min = "0" value = "1">
+          <label>
+            <input type = "number" min = "0" value = "1">
+          </label>
           <button type = "button" class = "btn">
             Add to Cart <i class = "fas fa-shopping-cart"></i>
           </button>
@@ -144,7 +146,6 @@ window.addEventListener('resize', slideImage);
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 *{
   box-sizing: border-box;
@@ -208,21 +209,6 @@ img{
   width: 80px;
   background: #12263a;
 }
-.product-link{
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 0.9rem;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  background: #256eff;
-  color: #fff;
-  padding: 0 0.3rem;
-  transition: all 0.5s ease;
-}
-.product-link:hover{
-  opacity: 0.9;
-}
 .product-rating{
   color: #ffc107;
 }
@@ -260,7 +246,6 @@ img{
   font-size: 0.9rem;
 }
 .product-detail ul li{
-  margin: 0;
   list-style: none;
   background-size: 18px;
   padding-left: 1.7rem;
@@ -276,7 +261,7 @@ img{
 }
 .purchase-info input,
 .purchase-info .btn{
-  border: 1.5px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 25px;
   text-align: center;
   padding: 0.45rem 0.8rem;
