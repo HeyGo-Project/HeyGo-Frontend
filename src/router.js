@@ -5,6 +5,7 @@ import Hotels from "@/views/Hotels";
 import Hotel from "@/views/Hotel";
 import Auth from "@/views/Auth";
 import Profile from "@/views/Profile";
+import Guidelist from "./views/Guidelist";
 
 Vue.use(Router);
 
@@ -37,5 +38,10 @@ export default new Router({
       name: "profile",
       component: Profile
     },
+    {
+      path: "/guides",
+      name: "guides",
+      component:Guidelist
+    }
   ]
 });

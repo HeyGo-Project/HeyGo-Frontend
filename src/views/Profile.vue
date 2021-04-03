@@ -6,7 +6,7 @@
           <img :src="imgUrl" alt="" width="200px" />
         </div>
         <div class="profile-nav-info">
-          <h3 class="user-name">Alisher</h3>
+          <h3 class="user-name-comment">Alisher</h3>
           <div class="address">
             <p class="state">Almaty</p>
             <span class="country">Kazakhstan</span>
