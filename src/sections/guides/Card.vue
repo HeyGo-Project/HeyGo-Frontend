@@ -1,17 +1,21 @@
 <template>
   <div class="main container my-3 py-5 text-center">
     <section id="guide" >
-      <div class="text-center">
-        <div class="row" >
-          <div class="col-lg-3 col-md-6">
+      <div class="text-center" >
+        <div class="row" style="margin: auto">
+<!--          <div class="col-lg-3 col-md-6">-->
             <div
               class="card"
               v-for="guides in guidesList"
               :key="guides.firstName"
               :class="[{ professional: guides.professional }]"
-
+              style="flex-shrink: 3;
+               margin: 120px 25px 10px;
+               height: auto;
+               padding: 30px;
+               width: 300px;"
             >
-              <div class="card-body">
+              <div class="" >
                 <img :src="guides.imgUrl" alt="" class="img-fluid" />
                 <h3>{{ guides.firstName + " " + guides.lastName }}</h3>
                 <h5>{{ guides.position }}</h5>
@@ -20,7 +24,7 @@
                 </p>
               </div>
             </div>
-          </div>
+<!--          </div>-->
         </div>
       </div>
     </section>
@@ -67,9 +71,9 @@ export default {
   font-weight: 500;
 }
 #guide .card {
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: 5px 5px 15px #e74c3c;
-  margin-top: 70px;
+  margin-top: 80px;
 }
 #guide .card:hover {
   background: #e74c3c;
@@ -92,7 +96,7 @@ p {
   margin-top: 10px;
 }
 #guide .professional {
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: 5px 5px 15px #01a4b6;
 }
 #guide .professional:hover {
