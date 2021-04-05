@@ -1,117 +1,67 @@
 <template>
   <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Product Card/Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous"/>
   </head>
   <body>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class = "card-wrapper">
-    <div class = "card">
+  <div class="card-wrapper">
+    <div class="card">
       <!-- card left -->
-      <div class = "product-imgs">
-        <div class = "img-display">
-          <div class = "img-showcase">
-            <img src = "/img/hotelimg/h1.jpg" alt = "Hotel imagee">
-            <img src = "/img/hotelimg/h2.jpg" alt = "Hotel image">
-            <img src = "/img/hotelimg/h3.jpg" alt = "Hotel image">
-            <img src = "/img/hotelimg/h4.jpg" alt = "Hotel image">
-          </div>
-        </div>
-        <div class = "img-select">
-          <div class = "img-item">
-            <a href = "#" data-id = "1">
-              <img src = "/img/hotelimg/h1.jpg" alt = "Hotel image">
-            </a>
-          </div>
-          <div class = "img-item">
-            <a href = "#" data-id = "2">
-              <img src = "/img/hotelimg/h2.jpg" alt = "Hotel image">
-            </a>
+      <div class="product-imgs">
 
+        <div class="img-display">
+          <div class="img-showcase">
+            <img :src="images[0].src" alt="Hotel image">
           </div>
-          <div class = "img-item">
-            <a href = "#" data-id = "3">
-              <img src = "/img/hotelimg/h3.jpg" alt = "Hotel image">
-            </a>
-          </div>
-          <div class = "img-item">
-            <a href = "#" data-id = "4">
-              <img src = "/img/hotelimg/h4.jpg" alt = "Hotel image">
+        </div>
+
+        <div class="img-select">
+          <div class="img-item" v-for="imgs in images">
+            <a href="#">
+              <img :src="imgs.src" alt="Hotel image">
             </a>
           </div>
         </div>
+
       </div>
+
       <!-- card right -->
-      <div class = "product-content">
-        <h2 class = "product-title">Renion Park hotel</h2>
-        <div class = "product-rating">
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star-half-alt"></i>
+      <div class="product-content">
+        <h2 class="product-title">Renion Park hotel</h2>
+        <p>{{location}}</p>
+        <div class="product-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
           <span>4.7(21)</span>
         </div>
 
 
-
-        <div class = "product-detail">
+        <div class="product-detail">
           <h2>about: </h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
+          <p>{{ about }}</p>
+          <p>{{ about }}</p>
+
           <ul>
-            <li>1 swimming pool</li>
-            <li>Airport shuttle</li>
-            <li>Non-smoking rooms</li>
-            <li>Spa and wellness centre</li>
-            <li>good fitness centre</li>
-            <li>Room service</li>
-            <li>Restaurant </li>
+            <li
+            v-for="advs in advantages"
+            >{{ advs.adv }}</li>
           </ul>
+
         </div>
 
-        <div class = "product-price">
-          <p class = "last-price">Old Price: <span>$257.00</span></p>
-          <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
-        </div>
-
-        <div class = "purchase-info">
-          <label>
-            <input type = "number" min = "0" value = "1">
-          </label>
-          <button type = "button" class = "btn">
-            Add to Cart <i class = "fas fa-shopping-cart"></i>
-          </button>
-          <button type = "button" class = "btn">Compare</button>
-        </div>
+        <button
+            class="btn btn-primary"
+            style="float: right"
+        >
+          Reserve
+        </button>
 
 
-
-        <div class = "social-links">
-          <p>Share At: </p>
-          <a href = "#">
-            <i class = "fab fa-facebook-f"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-twitter"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-instagram"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-whatsapp"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-pinterest"></i>
-          </a>
-        </div>
       </div>
     </div>
   </div>
@@ -121,57 +71,93 @@
 
 <script>
 export default {
-name: "Hotel"
+  name: "Hotel",
+  data() {
+    return {
+      advantages: [
+        {adv: "1 swimming pool"},
+        {adv: "Airport shuttle"},
+        {adv: "Non-smoking rooms"},
+        {adv: "Spa and wellness centre"},
+        {adv: "good fitness centre"},
+        {adv: "Room service"},
+        {adv: "Restaurant"}
+      ],
+      images:[
+        {src: "/img/hotelimg/h1.jpg"},
+        {src: "/img/hotelimg/h2.jpg"},
+        {src: "/img/hotelimg/h3.jpg"},
+        {src: "/img/hotelimg/h4.jpg"},
+      ],
+      about:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat\n" +
+          "            sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa.",
+      location:"Almaty • Show om map • 900 m from centre",
+
+    }
+  }
 }
 </script>
 
 <style scoped>
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
-body{
-  line-height: 1.5;
+
+body {
+  line-height: 1.3;
+  margin-top: 15px;
 }
-.card-wrapper{
+
+.card-wrapper {
   max-width: 1100px;
   margin: 0 auto;
 }
-img{
+
+img {
   width: 100%;
   display: block;
 }
-.img-display{
+
+.img-display {
   overflow: hidden;
 }
-.img-showcase{
+
+.img-showcase {
   display: flex;
   width: 100%;
   transition: all 0.5s ease;
 }
-.img-showcase img{
+
+.img-showcase img {
   min-width: 100%;
 }
-.img-select{
+
+.img-select {
   display: flex;
 }
-.img-item{
+
+.img-item {
   margin: 0.3rem;
 }
+
 .img-item:nth-child(1),
 .img-item:nth-child(2),
-.img-item:nth-child(3){
+.img-item:nth-child(3) {
   margin-right: 0;
 }
-.img-item:hover{
+
+.img-item:hover {
   opacity: 0.8;
 }
-.product-content{
+
+.product-content {
   padding: 2rem 1rem;
 }
-.product-title{
+
+.product-title {
   font-size: 3rem;
   text-transform: capitalize;
   font-weight: 700;
@@ -179,7 +165,8 @@ img{
   color: #12263a;
   margin: 1rem 0;
 }
-.product-title::after{
+
+.product-title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -188,43 +175,53 @@ img{
   width: 80px;
   background: #12263a;
 }
-.product-rating{
+
+.product-rating {
   color: #ffc107;
 }
-.product-rating span{
+
+.product-rating span {
   font-weight: 600;
   color: #252525;
 }
-.product-price{
+
+.product-price {
   margin: 1rem 0;
   font-size: 1rem;
   font-weight: 700;
 }
-.product-price span{
+
+.product-price span {
   font-weight: 400;
 }
-.last-price span{
+
+.last-price span {
   color: #f64749;
   text-decoration: line-through;
 }
-.new-price span{
+
+.new-price span {
   color: #256eff;
 }
-.product-detail h2{
+
+.product-detail h2 {
   text-transform: capitalize;
   color: #12263a;
   padding-bottom: 0.6rem;
 }
-.product-detail p{
+
+.product-detail p {
   font-size: 0.9rem;
   padding: 0.3rem;
   opacity: 0.8;
 }
-.product-detail ul{
+
+.product-detail ul {
   margin: 1rem 0;
   font-size: 0.9rem;
 }
-.product-detail ul li{
+
+.product-detail ul li {
   list-style: none;
   background-size: 18px;
   padding-left: 1.7rem;
@@ -232,14 +229,17 @@ img{
   font-weight: 600;
   opacity: 0.9;
 }
-.product-detail ul li span{
+
+.product-detail ul li span {
   font-weight: 400;
 }
-.purchase-info{
+
+.purchase-info {
   margin: 1.5rem 0;
 }
+
 .purchase-info input,
-.purchase-info .btn{
+.purchase-info .btn {
   border: 2px solid #ddd;
   border-radius: 25px;
   text-align: center;
@@ -248,27 +248,34 @@ img{
   margin-right: 0.2rem;
   margin-bottom: 1rem;
 }
-.purchase-info input{
+
+.purchase-info input {
   width: 60px;
 }
-.purchase-info .btn{
+
+.purchase-info .btn {
   cursor: pointer;
   color: #fff;
 }
-.purchase-info .btn:first-of-type{
+
+.purchase-info .btn:first-of-type {
   background: #256eff;
 }
-.purchase-info .btn:last-of-type{
+
+.purchase-info .btn:last-of-type {
   background: #f64749;
 }
-.purchase-info .btn:hover{
+
+.purchase-info .btn:hover {
   opacity: 0.9;
 }
-.social-links{
+
+.social-links {
   display: flex;
   align-items: center;
 }
-.social-links a{
+
+.social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,30 +289,34 @@ img{
   font-size: 0.8rem;
   transition: all 0.5s ease;
 }
-.social-links a:hover{
+
+.social-links a:hover {
   background: #000;
   border-color: transparent;
   color: #fff;
 }
 
-@media screen and (min-width: 992px){
-  .card{
+@media screen and (min-width: 992px) {
+  .card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
   }
-  .card-wrapper{
+
+  .card-wrapper {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .product-imgs{
+
+  .product-imgs {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .product-content{
+
+  .product-content {
     padding-top: 0;
   }
 }
