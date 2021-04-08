@@ -4,17 +4,16 @@
     <div class="card">
       <!-- card left -->
       <div class="product-imgs">
-
         <div class="img-display">
-          <div class="img-showcase">
-            <img :src="images[0].src" alt="Hotel image">
+          <div class="img-showcase" >
+            <img :src="images[0].src" alt="Hotel image" id="bigImage">
           </div>
         </div>
 
         <div class="img-select">
           <div v-for="imgs in images" class="img-item">
             <a href="#">
-              <img :src="imgs.src" alt="Hotel image">
+              <img :src="imgs.src" alt="Hotel image" @click="changePhoto(imgs)">
             </a>
           </div>
         </div>
@@ -100,7 +99,12 @@ export default {
       about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat\n" +
           "            sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa.",
       location: "Almaty • Show om map • 900 m from centre",
-
+    }
+  },
+  methods:{
+    changePhoto(img){
+      let bigImg = document.getElementById("bigImage");
+      bigImg.src = img.src;
     }
   }
 }
