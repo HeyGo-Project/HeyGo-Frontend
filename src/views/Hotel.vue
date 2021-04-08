@@ -1,10 +1,4 @@
 <template>
-  <html>
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-          crossorigin="anonymous"/>
-  </head>
   <body>
   <div class="card-wrapper">
     <div class="card">
@@ -18,7 +12,7 @@
         </div>
 
         <div class="img-select">
-          <div class="img-item" v-for="imgs in images">
+          <div v-for="imgs in images" class="img-item">
             <a href="#">
               <img :src="imgs.src" alt="Hotel image">
             </a>
@@ -30,13 +24,13 @@
       <!-- card right -->
       <div class="product-content">
         <h2 class="product-title">Renion Park hotel</h2>
-        <p>{{location}}</p>
+        <p>{{ location }}</p>
         <div class="product-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
           <span>4.7(21)</span>
         </div>
 
@@ -48,8 +42,9 @@
 
           <ul>
             <li
-            v-for="advs in advantages"
-            >{{ advs.adv }}</li>
+                v-for="advs in advantages"
+            >{{ advs.adv }}
+            </li>
           </ul>
 
         </div>
@@ -63,15 +58,28 @@
 
 
       </div>
+
     </div>
+
   </div>
+  <div style="display: block;
+  margin-left: 350px;
+  margin-right: auto;">
+    <Reviews/>
+  </div>
+
   </body>
-  </html>
 </template>
 
 <script>
+import Review from "../sections/profile/Review";
+import Reviews from "../sections/profile/Review";
+
 export default {
   name: "Hotel",
+  components: {Reviews},
+  comments: Review
+  ,
   data() {
     return {
       advantages: [
@@ -83,15 +91,15 @@ export default {
         {adv: "Room service"},
         {adv: "Restaurant"}
       ],
-      images:[
+      images: [
         {src: "/img/hotelimg/h1.jpg"},
         {src: "/img/hotelimg/h2.jpg"},
         {src: "/img/hotelimg/h3.jpg"},
         {src: "/img/hotelimg/h4.jpg"},
       ],
-      about:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat\n" +
+      about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat\n" +
           "            sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa.",
-      location:"Almaty • Show om map • 900 m from centre",
+      location: "Almaty • Show om map • 900 m from centre",
 
     }
   }
@@ -100,19 +108,18 @@ export default {
 
 <style scoped>
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  line-height: 1.3;
+  line-height: 1.5;
   margin-top: 15px;
 }
 
 .card-wrapper {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -240,8 +247,8 @@ img {
 
 .purchase-info input,
 .purchase-info .btn {
-  border: 2px solid #ddd;
-  border-radius: 25px;
+
+
   text-align: center;
   padding: 0.45rem 0.8rem;
   outline: 0;
@@ -282,9 +289,7 @@ img {
   width: 32px;
   height: 32px;
   color: #000;
-  border: 1px solid #000;
   margin: 0 0.2rem;
-  border-radius: 50%;
   text-decoration: none;
   font-size: 0.8rem;
   transition: all 0.5s ease;
@@ -292,7 +297,6 @@ img {
 
 .social-links a:hover {
   background: #000;
-  border-color: transparent;
   color: #fff;
 }
 

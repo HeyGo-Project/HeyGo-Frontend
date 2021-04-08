@@ -91,8 +91,7 @@ export default {
 .profile-review-top {
   display: flex;
   background: white;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   width: 760px;
   margin-left: 20px;
   margin-right: 20px;
