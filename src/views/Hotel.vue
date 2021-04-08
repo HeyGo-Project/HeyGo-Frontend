@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <div>
   <div class="card-wrapper">
     <div class="card-main">
       <!-- card left -->
@@ -48,6 +48,37 @@
           <p>{{ about }}</p>
         </div>
 
+<!--        Later should be casted for vue-->
+        <div class="product-prices">
+<!--          right side-->
+          <div class="prices-details">
+            <h5>Luxury</h5>
+            <p>*1 night, 2 adults</p>
+            <p style="color: black;margin-left: 15px">  Check in: 15 april 2021</p>
+            <p style="color: black;margin-left: 15px"> &nbsp;&nbsp;&nbsp;&nbsp; Check out: 16 april 2021</p>
+          </div>
+<!--          left side-->
+          <div class="prices-advantages">
+            <ul style="list-style: none">
+              <li>No credit card needed!</li>
+              <li style="color: black">Advantages:</li>
+              <li>29 m²</li>
+              <li>free wifi</li>
+              <li>Flat-screen TV</li>
+              <li>Private bathroom</li>
+              <li>Air conditioning</li>
+              <li>Minibar</li>
+            </ul>
+          </div>
+
+          <div class="prices">
+            <p style="color: black">Price:</p>
+            <p style="color: red;text-decoration: line-through;font-size: 10px">KZT 35,000</p>
+            <p style="color: black;font-size: 20px">KZT 28,000</p>
+          </div>
+
+        </div>
+
         <button class="vanilla-btn">
           Reserve
         </button>
@@ -59,7 +90,7 @@
   </div>
 
 
-  </body>
+  </div>
 </template>
 
 <script>
@@ -115,6 +146,34 @@ body {
   padding-top: 6%;
   line-height: 1.5;
   margin-top: auto;
+}
+
+.product-prices{
+  border-radius: 15px;
+  border: solid #01a4b6;
+  background: #D6F8FC;
+  color: #01a4b6;
+  margin-top: 15px;
+  /*grid params*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  grid-auto-rows: minmax(100px, auto);
+
+}
+
+.prices-details{
+  margin: 15px;
+}
+
+.prices-advantages{
+  grid-column: 2/4;
+  text-align: right;
+  margin: 10px 15px 10px 0;
+}
+
+.prices{
+  margin: 15px;
 }
 
 @media screen and (min-width: 992px) {
