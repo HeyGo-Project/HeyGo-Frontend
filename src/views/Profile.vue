@@ -17,12 +17,13 @@
       <div class="main-bd">
         <div class="left-side">
           <div class="profile-side">
-            <p class="mobile-number">
-              <i class="fa fa-phone"></i>{{ phoneNumber }}
-            </p>
+
             <div class="user-email">
-              <i class="fa fa-envelope"></i>{{ userEmail }}
+              <i class="fa fa-envelope" style="margin-right: 10px"></i>{{ userEmail }}
             </div>
+            <p class="mobile-number">
+              <i class="fa fa-phone" style="margin-right: 10px"></i>{{ phoneNumber }}
+            </p>
             <div class="user-bio">
               <p class="bio">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -39,7 +40,7 @@
             </div>
             <div class="user-rating">
               <h3 class="rating">4.5</h3>
-              <div class="rate">
+              <div class="rate" style="font-size: 25px; margin-top: 5px">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -141,6 +142,7 @@ export default {
   height: 190px;
   position: relative;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3); /* Параметры тени */
+  border-radius: 15px;
 }
 .profile-nav-info {
   float: left;
@@ -173,6 +175,8 @@ export default {
   font-family: "Bree Serif", serif;
   margin-left: 10px;
   z-index: 99;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
 }
 .profile-side p {
   margin-bottom: 7px;
@@ -187,9 +191,10 @@ export default {
 }
 .profile-btn {
   display: flex;
+
 }
 .profile-btn i {
-  color: black;
+  color: white;
   margin-right: 5px;
 }
 .createbtn {
@@ -197,7 +202,8 @@ export default {
   padding: 5px;
   width: 100%;
   border-radius: 3px;
-  background: #17a2b8;
+  background: #01A4B6;
+  color:white;
   font-family: "Bree Serif", sans-serif;
   margin: 5px 2px;
 }
@@ -223,9 +229,10 @@ export default {
   justify-content: center;
   list-style-type: none;
   height: 40px;
-  background: #fff;
+  background: transparent;
   width: 100%;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  color:#666;
+  font-weight: normal;
   padding-right: 50px;
 }
 .nav ul li {
@@ -236,7 +243,8 @@ export default {
   transition: all 0.2s ease-in-out;
 }
 .nav ul li:hover {
-  box-shadow: 0px -3px 0px rgb(121, 243, 231) inset;
+  box-shadow: 0px -3px 0px #01A4B6 inset;
+  font-weight: bold;
 }
 .profile-body {
   width: 100%;
@@ -249,7 +257,8 @@ export default {
   display: none;
 }
 .active {
-  box-shadow: 0px -3px 0px rgb(121, 243, 231) inset;
+  box-shadow: 0px -3px 0px #01A4B6 inset;
+  font-weight: bold;
 }
 @media (max-width: 1100px) {
   .profile-side{
@@ -289,6 +298,7 @@ export default {
   .main-bd{
     flex-direction: column;
     padding-right: 0px;
+
   }
   .profile-side{
     width: 100%;

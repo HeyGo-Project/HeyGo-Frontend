@@ -1,9 +1,11 @@
 <template>
   <div class="hotels-list" style="margin-bottom: 100px"  >
     <div class="profile-review-top">
+
       <div class="profile-img col-md-2">
         <img :src="imgUrl" alt="" width="120px" height="120" />
       </div>
+
       <div class="user-name-comment col-md-6">
         <div class="col-md-12">
           <p>{{ name + " " + surname }}</p>
@@ -13,8 +15,6 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet ex
             magni officia? Cum dolores libero nisi placeat quia similique unde
             vero. Cum est facilis iste iure laudantium, magni qui velit?
-
-
           </p>
         </div>
       </div>
@@ -28,45 +28,8 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
         </div>
-
       </div>
-
     </div>
-
-
-    <div class="profile-review-top">
-      <div class="profile-img col-md-2">
-        <img :src="imgUrl" alt="" width="120px" height="120" />
-      </div>
-      <div class="user-name-comment col-md-6">
-        <div class="col-md-12">
-          <p>{{ name + " " + surname }}</p>
-        </div>
-        <div class="user-comment ">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet ex
-            magni officia? Cum dolores libero nisi placeat quia similique unde
-            vero. Cum est facilis iste iure laudantium, magni qui velit?
-
-
-          </p>
-        </div>
-      </div>
-
-      <div class="user-rating">
-        <p>User Rating:</p>
-        <div class="rate">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-
-      </div>
-
-    </div>
-
 
   </div>
 </template>
@@ -92,7 +55,8 @@ export default {
   display: flex;
   background: white;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-  width: 760px;
+  width: auto;
+  max-width: 760px;
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 20px;
@@ -150,8 +114,15 @@ export default {
   }
   .profile-review-top{
     text-align: center;
-    width: 350px;
+    width: auto;
+    max-width: 350px;
     display: block;
+    margin-left: 20px;
+    margin-right: auto;
+  }
+
+  .user-comment {
+    width: 350px;
   }
 
   .profile-img img{

@@ -53,10 +53,11 @@
         </button>
       </div>
     </div>
+    <div class="comment-section">
+      <Reviews/>
+    </div>
   </div>
-  <div class="comment-section">
-    <Reviews/>
-  </div>
+
 
   </body>
 </template>
@@ -137,12 +138,15 @@ body {
     grid-row: 1;
   }
 
+  .comment-section {
+    /*another approach required*/
+    grid-column: 4/6;
+    grid-row: 2;
+  }
+
+
 }
 
-.comment-section {
-  /*another approach required*/
-  margin-left: 340px;
-}
 
 .vanilla-btn {
   float: right;
