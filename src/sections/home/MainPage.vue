@@ -39,11 +39,13 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Main",
   props: {
     msg: String,
   },
+
 };
 </script>
 

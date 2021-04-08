@@ -6,6 +6,7 @@ import Hotel from "@/views/Hotel";
 import Auth from "@/views/Auth";
 import Profile from "@/views/Profile";
 import Guidelist from "./views/Guidelist";
+import SearchHotel from "./views/SearchHotel";
 
 Vue.use(Router);
 
@@ -42,6 +43,11 @@ export default new Router({
       path: "/guides",
       name: "guides",
       component:Guidelist
+    },
+    {
+      path: "/hotels/search",
+      name: "searchHotel",
+      component: SearchHotel
     }
   ]
 });

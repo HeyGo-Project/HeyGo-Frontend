@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-review"  style="margin-bottom: 100px"  >
+  <div class="hotels-list" style="margin-bottom: 100px"  >
     <div class="profile-review-top">
       <div class="profile-img col-md-2">
         <img :src="imgUrl" alt="" width="120px" height="120" />
@@ -145,7 +145,7 @@ export default {
     padding:0;
     box-sizing:border-box
   }
-  .profile-review{
+  .hotels-list{
     margin-right: 20px;
   }
   .profile-review-top{

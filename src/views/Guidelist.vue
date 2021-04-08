@@ -1,15 +1,18 @@
 <template>
   <div class="container " >
+    <Searchbar class="search"/>
     <Card :guidesList="userData"/>
   </div>
 </template>
 
 <script>
 import Card from "../sections/guides/Card";
+import Searchbar from "../sections/guides/Searchbar";
 export default {
   name: "Guidelist",
   components:{
-    Card
+    Card,
+    Searchbar
   },
   data() {
     return {
@@ -56,4 +59,8 @@ export default {
 };
 </script>
 
+<style>
+.search{
+  margin-top: 100px;
+}
 </style>
