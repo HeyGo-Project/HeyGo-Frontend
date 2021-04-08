@@ -1,23 +1,32 @@
 <template>
   <body>
   <div class="card-wrapper">
-    <div class="card">
+    <div class="card-main">
       <!-- card left -->
       <div class="product-imgs">
         <div class="img-display">
-          <div class="img-showcase" >
-            <img :src="images[0].src" alt="Hotel image" id="bigImage">
+          <div class="img-showcase">
+            <img id="bigImage" :src="images[0].src" alt="Hotel image">
           </div>
         </div>
 
         <div class="img-select">
           <div v-for="imgs in images" class="img-item">
-            <a href="#">
-              <img :src="imgs.src" alt="Hotel image" @click="changePhoto(imgs)">
+            <a href="">
+              <img :src="imgs.src" alt="Hotel image" @click="changePhoto(imgs, $event)">
             </a>
           </div>
         </div>
 
+        <div class="product-detail">
+          <ul>
+            <li style="font-size: 18px; color: #01A4B6">Most favorite facilities</li>
+            <li
+                v-for="advs in advantages"
+            >{{ advs.adv }}
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- card right -->
@@ -37,33 +46,15 @@
         <div class="product-detail">
           <h2>about: </h2>
           <p>{{ about }}</p>
-          <p>{{ about }}</p>
-
-          <ul>
-            <li
-                v-for="advs in advantages"
-            >{{ advs.adv }}
-            </li>
-          </ul>
-
         </div>
 
-        <button
-            class="btn btn-primary"
-            style="float: right"
-        >
+        <button class="vanilla-btn">
           Reserve
         </button>
-
-
       </div>
-
     </div>
-
   </div>
-  <div style="display: block;
-  margin-left: 350px;
-  margin-right: auto;">
+  <div class="comment-section">
     <Reviews/>
   </div>
 
@@ -71,14 +62,19 @@
 </template>
 
 <script>
-import Review from "../sections/profile/Review";
 import Reviews from "../sections/profile/Review";
 
 export default {
   name: "Hotel",
   components: {Reviews},
-  comments: Review
-  ,
+  methods: {
+    changePhoto(img, event) {
+      let bigImg = document.getElementById("bigImage");
+      bigImg.src = img.src;
+      event.preventDefault();
+    }
+  },
+
   data() {
     return {
       advantages: [
@@ -96,35 +92,73 @@ export default {
         {src: "/img/hotelimg/h3.jpg"},
         {src: "/img/hotelimg/h4.jpg"},
       ],
-      about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat\n" +
-          "            sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa.",
+      about:
+          "Located in Almaty, 18 km from Medeo, Renion Park Hotel provides accommodation with a restaurant, free private parking, a fitness centre and a bar. Each accommodation at the 4-star hotel has city views, and guests can enjoy access to an indoor pool and a sauna. The accommodation offers a 24-hour front desk, airport transfers, room service and free WiFi throughout the property.\n" +
+          "All units are equipped with air conditioning, a flat-screen TV with cable channels, a fridge, a kettle, a shower, a hairdryer and a desk. At the hotel every room is fitted with a wardrobe and a private bathroom.\n" +
+          "Popular points of interest near the accommodation include Ascension Cathedral, Gvardeytsev-Panfilovtsev Park and Almaty Central Mosque. The nearest airport is Almaty International Airport, 11 km from Renion Park Hotel.\n" +
+          "Couples particularly like the location — they rated it 9.4 for a two-person trip.\n" +
+          "We speak your language!",
       location: "Almaty • Show om map • 900 m from centre",
     }
   },
-  methods:{
-    changePhoto(img){
-      let bigImg = document.getElementById("bigImage");
-      bigImg.src = img.src;
-    }
-  }
 }
 </script>
 
 <style scoped>
 * {
-  padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Nunito, sans-serif;
 }
 
 body {
+  padding-top: 6%;
   line-height: 1.5;
-  margin-top: 15px;
+  margin-top: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .card-main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1.5rem;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 1/4;
+    grid-row: 1;
+  }
+
+  .product-content {
+    grid-column: 4/7;
+    grid-row: 1;
+  }
+
+}
+
+.comment-section {
+  /*another approach required*/
+  margin-left: 340px;
+}
+
+.vanilla-btn {
+  float: right;
+  margin: 15px 15px 0 0;
+  color: white;
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+  background: #01A4B6;
+  text-align: center;
+  border: none;
 }
 
 .card-wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: auto;
 }
 
 img {
@@ -164,9 +198,6 @@ img {
   opacity: 0.8;
 }
 
-.product-content {
-  padding: 2rem 1rem;
-}
 
 .product-title {
   font-size: 3rem;
@@ -183,8 +214,8 @@ img {
   left: 0;
   bottom: 0;
   height: 4px;
-  width: 80px;
-  background: #12263a;
+  width: 200px;
+  background: #01A4B6;
 }
 
 .product-rating {
@@ -194,25 +225,6 @@ img {
 .product-rating span {
   font-weight: 600;
   color: #252525;
-}
-
-.product-price {
-  margin: 1rem 0;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.product-price span {
-  font-weight: 400;
-}
-
-.last-price span {
-  color: #f64749;
-  text-decoration: line-through;
-}
-
-.new-price span {
-  color: #256eff;
 }
 
 .product-detail h2 {
@@ -245,87 +257,10 @@ img {
   font-weight: 400;
 }
 
-.purchase-info {
-  margin: 1.5rem 0;
-}
-
-.purchase-info input,
-.purchase-info .btn {
-
-
-  text-align: center;
-  padding: 0.45rem 0.8rem;
-  outline: 0;
-  margin-right: 0.2rem;
-  margin-bottom: 1rem;
-}
 
 .purchase-info input {
   width: 60px;
 }
 
-.purchase-info .btn {
-  cursor: pointer;
-  color: #fff;
-}
 
-.purchase-info .btn:first-of-type {
-  background: #256eff;
-}
-
-.purchase-info .btn:last-of-type {
-  background: #f64749;
-}
-
-.purchase-info .btn:hover {
-  opacity: 0.9;
-}
-
-.social-links {
-  display: flex;
-  align-items: center;
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  color: #000;
-  margin: 0 0.2rem;
-  text-decoration: none;
-  font-size: 0.8rem;
-  transition: all 0.5s ease;
-}
-
-.social-links a:hover {
-  background: #000;
-  color: #fff;
-}
-
-@media screen and (min-width: 992px) {
-  .card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
-  }
-
-  .card-wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .product-imgs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .product-content {
-    padding-top: 0;
-  }
-}
 </style>

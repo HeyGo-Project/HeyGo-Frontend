@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Footer from "@/views/Footer";
+import Footer from "./views/Footer";
 
 export default {
   components: {
@@ -15,6 +15,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss">
 #app {
   font-family: "Nunito", sans-serif;
