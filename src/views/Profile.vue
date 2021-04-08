@@ -8,7 +8,7 @@
         <div class="profile-nav-info">
           <h3 class="user-name-comment">Alisher</h3>
           <div class="address">
-            <p class="state">Almaty</p>
+            <p class="state">Almaty,</p>
             <span class="country">Kazakhstan</span>
           </div>
         </div>
@@ -40,12 +40,12 @@
             </div>
             <div class="user-rating">
               <h3 class="rating">4.5</h3>
-              <div class="rate" style="font-size: 25px; margin-top: 5px">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+              <div class="rate" >
+                <i class="fa fa-star" style="color: #ffda2f;"></i>
+                <i class="fa fa-star" style="color: #ffda2f;"></i>
+                <i class="fa fa-star" style="color: #ffda2f;"></i>
+                <i class="fa fa-star" style="color: #ffda2f;"></i>
+                <i class="fa fa-star" style="color: #ffda2f;"></i>
               </div>
             </div>
           </div>
@@ -118,6 +118,13 @@ export default {
   font-family: "Nunito", sans-serif;
   background: #e9e9e9;
 }
+
+.rate{
+  margin-left: 10px;
+  font-size: 25px;
+  margin-top: 5px
+}
+
 .profile-img {
   float: left;
   width: 340px;
