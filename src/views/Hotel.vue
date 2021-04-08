@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <body>
   <div class="card-wrapper">
     <div class="card-main">
       <!-- card left -->
@@ -90,7 +90,7 @@
   </div>
 
 
-  </div>
+  </body>
 </template>
 
 <script>
