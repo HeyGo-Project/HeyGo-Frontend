@@ -21,7 +21,7 @@
 
       <div class="user-rating">
         <p>User Rating:</p>
-        <div class="rate">
+        <div class="rate" style="">
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
@@ -92,6 +92,7 @@ export default {
 }
 .rate {
   margin-left: 10px;
+  color: #ffda2f;
 }
 .user-comment {
   padding-right: 60px;
