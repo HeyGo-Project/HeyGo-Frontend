@@ -87,7 +87,6 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-
 }
 .slogan h1{
   font-weight: bolder;
@@ -114,6 +113,7 @@ export default {
   background-image: url('../../assets/Hero_1.svg');
   background-size: auto;
   background-position: center;
+  margin-top: 100px;
 }
 
 #booking::before {
