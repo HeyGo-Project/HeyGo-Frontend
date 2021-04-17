@@ -1,7 +1,7 @@
 <template>
   <div class="hotels">
-    <Booking :hotels="hotelsData" />
-    <HotelsList :hotels="hotelsData" />
+    <Booking :hotels="hotelsData" class="booking"/>
+    <HotelsList :hotels="hotelsData" class="hotelsList"/>
   </div>
 </template>
 
@@ -39,53 +39,12 @@ export default {
           img: "/img/products/tour-guide.jpg",
           link: "/guides"
         },
-        {
-          name: "Lorem ipsum",
-          info: "Lorem ipsum dolor sit amet.",
-          city: "Almaty",
-          img: "/img/products/club-room.jpg",
-          link: "/hotels"
-        },
-        {
-          name: "Lorem ipsum",
-          info: "Lorem ipsum dolor sit amet.",
-          city: "Almaty",
-          img: "/img/products/airplane.jpg",
-          link: "/flights"
-        },
-        {
-          name: "Lorem ipsum",
-          info: "Lorem ipsum dolor sit amet.",
-          city: "Almaty",
-          img: "/img/products/tour-guide.jpg",
-          link: "/guides"
-        },        {
-          name: "Lorem ipsum",
-          info: "Lorem ipsum dolor sit amet.",
-          city: "Almaty",
-          img: "/img/products/club-room.jpg",
-          link: "/hotels"
-        },
-        {
-          name: "Lorem ipsum",
-          info: "Lorem ipsum dolor sit amet.",
-          city: "Almaty",
-          img: "/img/products/airplane.jpg",
-          link: "/flights"
-        },
-        {
-          name: "Lorem ipsum",
-          info: "Lorem ipsum dolor sit amet.",
-          city: "Almaty",
-          img: "/img/products/tour-guide.jpg",
-          link: "/guides"
-        },
-
-
       ]
     };
   }
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+
+</style>

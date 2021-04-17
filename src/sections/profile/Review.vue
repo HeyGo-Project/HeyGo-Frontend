@@ -123,12 +123,14 @@ export default {
   }
 
   .user-comment {
-    width: 350px;
+    width: 320px;
+    text-align: center;
+    margin-right: 20px;
   }
 
   .profile-img img{
     alignment: center;
-    margin-right: 20px;
+    margin-right: 40px;
 
   }
 

@@ -2,7 +2,13 @@
   <div id="booking" class="section">
     <div class="section-center">
       <div class="container">
-        <div class="row"></div>
+        <div class="slogan">
+          <div>
+            <h1>It's more than just a trip</h1>
+          </div>
+        </div>
+        <div class="row">
+        </div>
         <div class="booking-form">
           <form>
             <div class="row no-margin">
@@ -11,10 +17,9 @@
                   <span class="form-label">Destination</span>
                   <label>
                     <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Country, ZIP, city..."
-                      v-model="hotels.name"
+                        class="form-control"
+                        type="text"
+                        placeholder="Country, ZIP, city..."
                     />
                   </label>
                 </div>
@@ -33,7 +38,8 @@
                     <div class="form-group">
                       <span class="form-label">Check out</span>
                       <label>
-                        <input class="form-control" type="date" required />
+<!--                        <input placeholder="Date"  class="form-control" type="date" required onfocus="(this.type='date')"/>-->
+                        <input type="date" class="form-control" required>
                       </label>
                     </div>
                   </div>
@@ -54,7 +60,7 @@
               </div>
               <div class="col-md-3">
                 <div class="form-btn">
-                  <button class="submit-btn" @click.prevent="showText">Check availability</button>
+                  <button class="submit-btn">Check availability</button>
                 </div>
               </div>
             </div>
@@ -63,17 +69,12 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
 export default {
   name: "Hotels",
-  props: ["hotels"],
-  methods:{
-    showText(){
-      console.log(this.hotels.name)
-    }
-  },
   data() {
     return {};
   }
@@ -81,14 +82,22 @@ export default {
 </script>
 
 <style>
-#booking-text {
-  align-content: center;
-  font-weight: 800;
-  font-size: 75px;
+.slogan{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.slogan h1{
+  font-weight: bolder;
+  color: #01a4b6;
+  font-size: 80px;
+  width: 600px;
 }
 .section {
   position: relative;
-  height: 60vh;
+  height:60vh;
 }
 
 .section .section-center {
@@ -101,14 +110,14 @@ export default {
 }
 
 #booking {
-  font-family: "Poppins", sans-serif;
-  background-image: url("../../assets/Hero_1.svg");
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../../assets/Hero_1.svg');
   background-size: auto;
   background-position: center;
 }
 
 #booking::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
@@ -118,41 +127,41 @@ export default {
 }
 
 .booking-form {
-  border: 0.5px solid #f8f6fe;
+  border: 0.5px solid #F8F6FE;
   background: #fff;
   border-radius: 2px;
 }
 
-.booking-form > form .row.no-margin {
-  margin-right: 0;
-  margin-left: 0;
+.booking-form>form .row.no-margin {
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
-.booking-form > form .row.no-margin > [class*="col-"] {
-  padding-right: 0;
-  padding-left: 0;
+.booking-form>form .row.no-margin>[class*="col-"] {
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .booking-form .form-group {
   position: relative;
   padding: 25px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .booking-form .form-group:after {
-  content: "";
+  content: '';
   background: rgba(129, 131, 144, 0.15);
   position: absolute;
   top: 25px;
   bottom: 0;
-  right: 0;
+  right: 0px;
   width: 2px;
   height: 75px;
 }
 
 .booking-form .form-control {
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 0px;
   border: none;
   height: 50px;
   -webkit-box-shadow: none;
@@ -164,19 +173,19 @@ export default {
 }
 
 .booking-form .form-control::-webkit-input-placeholder {
-  color: #01a4b6;
+  color: #01A4B6;
 }
 
 .booking-form .form-control:-ms-input-placeholder {
-  color: #01a4b6;
+  color: #01A4B6;
 }
 
 .booking-form .form-control::placeholder {
-  color: #01a4b6;
+  color: #01A4B6;
 }
 
 .booking-form input[type="date"].form-control:invalid {
-  color: #01a4b6;
+  color: #01A4B6;
 }
 
 .booking-form select.form-control {
@@ -185,7 +194,7 @@ export default {
   appearance: none;
 }
 
-.booking-form select.form-control + .select-arrow {
+.booking-form select.form-control+.select-arrow {
   position: absolute;
   right: 0px;
   bottom: 30px;
@@ -194,19 +203,19 @@ export default {
   height: 32px;
   text-align: center;
   pointer-events: none;
-  color: #01a4b6;
+  color: #818390;
   font-size: 14px;
 }
 
-.booking-form select.form-control + .select-arrow:after {
-  content: "\279C";
+.booking-form select.form-control+.select-arrow:after {
+  content: '\279C';
   display: block;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .booking-form .form-label {
-  color: #01a4b6;
+  color: #01A4B6;
   display: block;
   font-weight: 400;
   height: 25px;
@@ -219,7 +228,7 @@ export default {
 }
 
 .booking-form .submit-btn {
-  background: #01a4b6;
+  background: #01A4B6;
   border: none;
   text-transform: capitalize;
   display: block;
@@ -230,4 +239,22 @@ export default {
   font-weight: 400;
   color: #fff;
 }
+
+@media (max-width: 400px) {
+  #booking{
+    margin-top: 350px;
+    margin-bottom: 250px;
+    background-size: auto;
+  }
+  .slogan h1{
+    font-weight: bold;
+    color: #01a4b6;
+    font-size: 60px;
+    width: 300px;
+  }
+
+}
 </style>
+
+
+
