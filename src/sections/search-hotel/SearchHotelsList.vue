@@ -16,7 +16,7 @@
           <p id="roomsRemain">{{ hotels.roomsRemain }}</p>
         </div>
         <div class="actions">
-          <div class="rate" style="">
+          <div class="rate" style="color: #ece94c">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
