@@ -4,7 +4,7 @@
       <div class="container">
         <div class="slogan">
           <div>
-            <h1>It's more than just a trip</h1>
+            <h1 style="font-weight:lighter">It's more than just a trip</h1>
           </div>
         </div>
         <div class="row">
