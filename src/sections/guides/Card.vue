@@ -1,41 +1,44 @@
 <template>
   <div class="main container my-3 py-5 text-center">
-    <section id="guide" >
-      <div class="text-center" >
+    <section id="guide">
+      <div class="text-center">
         <div class="row" style="margin: auto">
-<!--          <div class="col-lg-3 col-md-6">-->
-            <div
-              class="card"
-              v-for="guides in guidesList"
-              :key="guides.firstName"
-              :class="[{ professional: guides.professional }]"
-              style="flex-shrink: 3;
+          <!--          <div class="col-lg-3 col-md-6">-->
+          <div
+            class="card"
+            v-for="guides in guides"
+            :key="guides.firstName"
+            :class="[{ professional: guides.professional }]"
+            style="flex-shrink: 3;
                margin: 120px 25px 10px;
                height: auto;
                padding: 30px;
                width: 300px;"
-            >
-              <div class="" >
-                <img :src="guides.imgUrl" alt="" class="img-fluid" />
-                <h3>{{ guides.firstName + " " + guides.lastName }}</h3>
-                <h5>{{ guides.position }}</h5>
-                <p>
-                  {{ guides.legend }}
-                </p>
-              </div>
+          >
+            <div class="">
+              <img :src="guides.imgUrl" alt="" class="img-fluid" />
+              <h3>{{ guides.firstName + " " + guides.lastName }}</h3>
+              <h5>{{ guides.position }}</h5>
+              <p>
+                {{ guides.legend }}
+              </p>
             </div>
-<!--          </div>-->
+          </div>
+          <!--          </div>-->
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
 <script>
 export default {
   name: "Card",
-  props: ['guidesList'],
+  computed: {
+    guides(){
+      return this.$store.state.guides
+    }
+  }
 };
 </script>
 

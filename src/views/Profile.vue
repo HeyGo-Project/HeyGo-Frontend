@@ -30,10 +30,11 @@
                 eiusmod tempor incididunt.
               </p>
             </div>
+            <button class="createbtn">
+              <i class="fa-hand-peace-o"></i>Become a guide
+            </button>
             <div class="profile-btn">
-              <button class="createbtn">
-                <i class="fa fa-comment"></i>Leave a comment
-              </button>
+
               <button class="createbtn">
                 <i class="fa fa-comment"></i>Leave a comment
               </button>
@@ -103,7 +104,9 @@ export default {
       selected: "Review"
     };
   },
-  methods: {}
+  methods: {
+
+  }
 };
 </script>
 

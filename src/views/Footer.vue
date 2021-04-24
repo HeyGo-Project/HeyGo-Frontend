@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="footer">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -9,7 +9,7 @@
       <div class="container py-5">
         <div class="row py-4">
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-            <img src="img/logo.png" alt="" width="180" class="mb-3" />
+            <img src="img/logo.png" alt="" width="180" class="mb-3"/>
             <p class="font-italic text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt.
@@ -40,10 +40,10 @@
             <div class="p-1 rounded border">
               <div class="input-group">
                 <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  aria-describedby="button-addon1"
-                  class="form-control border-0 shadow-0"
+                    type="email"
+                    placeholder="Enter your email address"
+                    aria-describedby="button-addon1"
+                    class="form-control border-0 shadow-0"
                 />
                 <div class="input-group-append">
                   <button id="button-addon1" type="submit" class="btn btn-link">
@@ -103,12 +103,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-hr{
-margin-bottom: 0px;
+hr {
+  margin-bottom: 0px;
 }
+
 #button-addon1 {
   color: cyan;
 }
+
 i {
   color: gray;
 }
