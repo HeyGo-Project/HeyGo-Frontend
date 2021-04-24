@@ -26,9 +26,19 @@
             </li>
           </ul>
           <router-link :to="loginPath" class="nav-link">
-            <button type="button" class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" >
+            <button v-if="!loggedIn" type="button" class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" >
+              Sign in
+            </button>
+          </router-link>
+          <router-link :to="registerPath" class="nav-link">
+            <button v-if="!loggedIn" type="button" class="btn btn-outline-primary my-2 mr-sm-2" data-toggle="modal">
               Sign up
             </button>
+          </router-link>
+          <router-link :to="logoutPath" class="nav-link">
+          <button v-if="loggedIn" type="button" class="btn btn-outline-danger my-2 mr-sm-2" data-toggle="modal">
+            Sign out
+          </button>
           </router-link>
         </div>
 
@@ -43,9 +53,16 @@
 <script>
 export default {
   name: "Navbar",
+  computed:{
+    loggedIn(){
+       return this.$store.getters.loggedIn
+    }
+  },
   data() {
     return {
       loginPath:'/login',
+      registerPath:'/registration',
+      logoutPath: '/logout',
       nav: [
         {
           link: "/services",

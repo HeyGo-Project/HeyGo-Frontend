@@ -6,8 +6,9 @@ import Hotel from "@/views/Hotel";
 import Profile from "@/views/Profile";
 import Guidelist from "./views/Guidelist";
 import SearchHotel from "./views/SearchHotel";
-import Registration from "./views/Auth/Registration";
-import Login from "./views/Auth/Login";
+import Registration from "./components/Auth/Registration";
+import Login from "./components/Auth/Login";
+import Logout from "./components/Auth/Logout";
 Vue.use(Router);
 
 export default new Router({
@@ -23,6 +24,11 @@ export default new Router({
       path: "/registration",
       name: "register",
       component: Registration
+    },
+    {
+      path: "/logout",
+      name: "logout",
+      component: Logout
     },
     {
       path: "/",
