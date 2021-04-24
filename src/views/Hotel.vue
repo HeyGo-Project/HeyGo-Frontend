@@ -1,6 +1,7 @@
 <template>
   <body>
-  <div class="card-wrapper">
+
+  <div class="card-wrapper container-fluid">
     <div class="card-main">
       <!-- card left -->
       <div class="product-imgs">
@@ -85,7 +86,7 @@
       </div>
     </div>
     <div class="comment-section">
-      <Reviews/>
+<!--      <Reviews/>-->
     </div>
   </div>
 

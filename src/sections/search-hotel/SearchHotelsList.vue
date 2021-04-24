@@ -2,9 +2,9 @@
   <div>
     <div class="hotel-container">
       <div
-          class="hotel-list"
           v-for="hotels in searchData"
           :key="hotels.city"
+          class="hotel-list"
       >
         <img :src="hotels.imgUrl" alt=""/>
         <div class="details">
@@ -23,7 +23,11 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
           </div>
-          <button id="availability" class="availability btn btn-primary">Check availability</button>
+          <router-link class="navbar-brand" to="/hotel">
+            <button id="availability" class="availability btn btn-primary">
+              Check availability
+            </button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -39,10 +43,11 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .hotel-container {
   margin: 100px 20px 20px 0;
 }
+
 .hotel-list {
   display: flex;
   background: white;
@@ -52,51 +57,63 @@ export default {
   margin: 20px 20px 20px 0;
   padding: 5px 0 5px 5px;
 }
+
 p {
   color: black;
 }
+
 .hotel-list img {
   width: 240px;
   height: 240px;
   border-radius: 10px;
 }
+
 .details {
   margin: 5px 20px 0 20px;
   text-align: left;
   width: 100%;
 }
+
 #name {
   font-size: 20px;
 }
+
 #city {
   font-size: 12px;
   margin-top: -14px;
   margin-right: 10px;
 }
+
 #klass {
   font-size: 12px;
 }
+
 #support {
   font-weight: bold;
   color: #439B24;
   margin-top: -5px;
 }
+
 #beds {
   margin-top: 30px;
   font-size: 12px;
 }
+
 #roomsRemain {
   font-size: 12px;
   font-weight: bold;
   color: #FF0000;
 }
-.actions{
+
+.actions {
   margin-left: 300px;
 }
-.rate{
+
+.rate {
   margin-left: 60px;
 }
-#availability{
+
+#availability {
   margin-top: 160px;
   margin-right: 20px;
   height: 50px;
