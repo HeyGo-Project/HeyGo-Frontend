@@ -25,10 +25,11 @@
               </router-link>
             </li>
           </ul>
-            <a class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" data-target="#login">
+          <router-link :to="loginPath" class="nav-link">
+            <button type="button" class="btn btn-outline-success my-2 mr-sm-2" data-toggle="modal" >
               Sign up
-            </a>
-<!--            <router-link class="btn btn-outline-success my-2 mr-sm-2" to="/auth">Sign in</router-link>-->
+            </button>
+          </router-link>
         </div>
 
       </div>
@@ -44,6 +45,7 @@ export default {
   name: "Navbar",
   data() {
     return {
+      loginPath:'/login',
       nav: [
         {
           link: "/services",

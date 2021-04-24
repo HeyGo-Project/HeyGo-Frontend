@@ -51,21 +51,27 @@ export const store = new Vuex.Store({
   getters:{
     loggedIn(state){
       return state.token != null
-    }
+    },
   },
   mutations:{
     retrieveToken(state, token){
       this.state.token = token
-    }
+    },
   },
   actions:{
-    async retrieveToken(context, credentials){
-      try {
-        await signIn(credentials.email, credentials.password)
-        context.commit('retrieveToken', cookie.get("accessToken"))
-      }catch (err){
-        console.log(err)
-      }
+     retrieveToken(context, credentials){
+       return new Promise((resolve, reject)=>{
+         try {
+           signIn(credentials.email, credentials.password).then(r => {
+             context.commit('retrieveToken', cookie.get("accessToken"))
+             resolve("works!")
+               }
+           )
+         }catch (err){
+           console.log(err)
+           reject(err)
+         }
+       })
     },
 
   }
