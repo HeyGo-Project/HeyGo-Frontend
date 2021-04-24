@@ -1,20 +1,6 @@
 <template>
   <div class="container">
-    <!-- Navbar-->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg navbar-light py-3">
-        <div class="container">
-          <!-- Navbar Brand -->
-          <a href="#" class="navbar-brand">
-            <img
-                src="https://res.cloudinary.com/mhmd/image/upload/v1571398888/Group_1514_tjekh3_zkts1c.svg"
-                alt="logo"
-                width="150"
-            />
-          </a>
-        </div>
-      </nav>
-    </header>
+
 
     <div class="container">
       <div class="row py-5 mt-4 align-items-center">
@@ -202,10 +188,9 @@ export default {
 </script>
 
 <style scoped>
-body {
-  min-height: 100vh;
+.container{
+  margin-top: 70px;
 }
-
 .form-control:not(select) {
   padding: 1.5rem 0.5rem;
 }

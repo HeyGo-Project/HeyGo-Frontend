@@ -15,7 +15,7 @@
 import MainPage from "@/sections/home/MainPage";
 import Products from "@/sections/home/Products.vue";
 import About from "../sections/home/About";
-import Login from "@/components/Auth/Authentication.vue";
+import Login from "@/components/Auth/Registration.vue";
 
 export default {
   name: "home",
