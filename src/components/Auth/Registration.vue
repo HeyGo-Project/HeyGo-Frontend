@@ -173,16 +173,14 @@
 
 <script>
 export default {
-  name: "Login",
+  name: "Register",
   data(){
     return{
       phone: '',
     }
   },
   methods:{
-    check (){
-      alert(this.phone)
-    }
+
   }
 };
 </script>

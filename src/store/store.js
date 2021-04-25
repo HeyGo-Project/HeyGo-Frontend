@@ -1,12 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { signIn } from "./api/auth";
+import { signIn, register } from "./api/auth";
 import cookie from "js-cookie";
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
+    error: null,
     token: cookie.get("accessToken") || null,
     guides: [
       {
@@ -50,6 +51,9 @@ export const store = new Vuex.Store({
   getters: {
     loggedIn(state) {
       return state.token != null;
+    },
+    error(state){
+      return state.error != null
     }
   },
   mutations: {
@@ -58,13 +62,16 @@ export const store = new Vuex.Store({
     },
     destroyToken(state) {
       state.token = null;
+    },
+    setError(state, error){
+      state.error = error
     }
   },
   actions: {
     destroyToken(context) {
       return new Promise((resolve, reject) => {
         try {
-          context.commit("destroyToken", cookie.remove("accessToken"))
+          context.commit("destroyToken", cookie.remove("accessToken"));
           resolve("works!");
         } catch (err) {
           console.log(err);
@@ -77,7 +84,26 @@ export const store = new Vuex.Store({
         try {
           signIn(credentials.email, credentials.password).then(r => {
             context.commit("retrieveToken", cookie.get("accessToken"));
-            resolve("works!");
+            resolve(r + "works!");
+          });
+        } catch (err) {
+          context.commit("setError", err);
+          console.log(err);
+          reject(err);
+        }
+      });
+    },
+    registerUser(context, credentials) {
+      return new Promise((resolve, reject) => {
+        try {
+          register(
+            credentials.email,
+            credentials.password,
+            credentials.firstName,
+            credentials.lastName,
+            credentials.birthDate
+          ).then(r => {
+            resolve(r + "works!");
           });
         } catch (err) {
           console.log(err);

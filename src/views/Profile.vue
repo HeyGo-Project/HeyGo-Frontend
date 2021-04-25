@@ -19,7 +19,7 @@
           <div class="profile-side">
 
             <div class="user-email">
-              <i class="fa fa-envelope" style="margin-right: 10px"></i>{{ userEmail }}
+              <i class="fa fa-envelope" style="margin-right: 10px"></i>{{ email }}
             </div>
             <p class="mobile-number">
               <i class="fa fa-phone" style="margin-right: 10px"></i>{{ phoneNumber }}
@@ -96,13 +96,15 @@ export default {
     return {
       firstName: "Alisher",
       lastName: "Zharmukhambetov",
-      userEmail: "alisher.zharm@gmail.com",
+      email: "alisher.zharm@gmail.com",
       imgUrl:
         "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
       phoneNumber: "+77072109620",
       tabs: ["Review", "Settings"],
       selected: "Review"
     };
+  },
+  computed:{
   },
   methods: {
 
