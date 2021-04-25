@@ -9,6 +9,7 @@ import SearchHotel from "./views/SearchHotel";
 import Registration from "./components/Auth/Registration";
 import Login from "./components/Auth/Login";
 import Logout from "./components/Auth/Logout";
+import Flights from "./views/Flights";
 Vue.use(Router);
 
 export default new Router({
@@ -62,6 +63,11 @@ export default new Router({
       path: "/hotels/search",
       name: "searchHotel",
       component:SearchHotel
+    },
+    {
+      path: "/flights",
+      name: "flights",
+      component:Flights
     }
   ]
 });
