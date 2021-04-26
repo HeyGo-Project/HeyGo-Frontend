@@ -45,7 +45,7 @@ export default {
           link: "/hotels"
         },
         {
-          title: "Flights",
+          title: "flights",
           info: "Lorem ipsum dolor sit amet.",
           img: "/img/products/airplane.jpg",
           link: "/flights"

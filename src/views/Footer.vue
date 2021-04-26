@@ -77,7 +77,7 @@ export default {
           title: "Guides",
         },
         {
-          title: "Flights",
+          title: "flights",
         },
         {
           title: "Hotels",
