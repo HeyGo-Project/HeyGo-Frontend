@@ -4,7 +4,7 @@
       <div class="container">
         <div class="slogan">
           <div>
-            <h1 style="font-weight:lighter">It's more than just a trip</h1>
+            <h1 style="">It's more than just a trip</h1>
           </div>
         </div>
         <div class="row">
@@ -72,7 +72,7 @@
 
 </template>
 
-<script>
+<script >
 export default {
   name: "Hotels",
   data() {
@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .slogan{
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@ export default {
   text-align: center;
 }
 .slogan h1{
-  font-weight: bolder;
+  font-weight:lighter;
   color: #01a4b6;
   font-size: 80px;
   width: 600px;
