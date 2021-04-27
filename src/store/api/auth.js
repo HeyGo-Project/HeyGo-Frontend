@@ -5,6 +5,7 @@ import cookie from 'js-cookie'
 const loginUrl = process.env.VUE_APP_GATEWAY_LINK + "/authorization";
 const registerUrl = process.env.VUE_APP_GATEWAY_LINK + "/registration";
 
+//TODO: Change login according to backend
 export const signIn = async (email, password) => {
   const response = await POST(`${loginUrl}`, {
     email,

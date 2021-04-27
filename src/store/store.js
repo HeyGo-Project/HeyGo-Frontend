@@ -101,7 +101,8 @@ export const store = new Vuex.Store({
             credentials.password,
             credentials.firstName,
             credentials.lastName,
-            credentials.birthDate
+            credentials.birthDate,
+            credentials.gender
           ).then(r => {
             resolve(r + "works!");
           });

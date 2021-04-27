@@ -20,7 +20,7 @@
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
-          <form action="#">
+          <form action="#" @submit.prevent="registerUser">
             <div class="row">
               <!-- First Name -->
               <div class="input-group col-lg-6 mb-4">
@@ -36,6 +36,7 @@
                     type="text"
                     name="firstname"
                     placeholder="First Name"
+                    v-model="firstName"
                     class="form-control bg-white border-left-0 border-md"
                 />
               </div>
@@ -54,6 +55,7 @@
                     type="text"
                     name="lastname"
                     placeholder="Last Name"
+                    v-model="lastName"
                     class="form-control bg-white border-left-0 border-md"
                 />
               </div>
@@ -71,32 +73,31 @@
                     id="email"
                     type="email"
                     name="email"
+                    v-model="email"
                     placeholder="Email Address"
                     class="form-control bg-white border-left-0 border-md"
-                     required
+                    required
                 />
               </div>
 
-              <!-- Phone Number -->
+              <!-- Date Number -->
               <div class="input-group col-lg-12 mb-4">
                 <div class="input-group-prepend">
                   <span
                       class="input-group-text bg-white px-4 border-md border-right-0"
                   >
-                    <i class="fa fa-phone-square text-muted"></i>
+                    <i class="fa fa-calendar text-muted"></i>
                   </span>
                 </div>
-
                 <input
-                    v-model="phone"
-                    id="phoneNumber"
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
+                    id="formatDate"
+                    type="date"
+                    name="formatDate"
                     class="form-control bg-white border-md border-left-0 pl-3"
+                    v-model="date"
                 />
+                <p>{{ date }}</p>
               </div>
-
               <div class="input-group col-lg-12 mb-4">
                 <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -105,8 +106,8 @@
                 </div>
                 <select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
                   <option value="">Choose your gender</option>
-                  <option value="">Male</option>
-                  <option value="">Female</option>
+                  <option value="" v-model="gender">Male</option>
+                  <option value="" v-model="gender">Female</option>
                 </select>
               </div>
 
@@ -127,6 +128,7 @@
                     placeholder="Password"
                     minlength="6"
                     maxlength="16"
+                    v-model="password"
                     class="form-control bg-white border-left-0 border-md"
                 />
               </div>
@@ -149,12 +151,11 @@
                     class="form-control bg-white border-left-0 border-md"
                 />
               </div>
-
               <!-- Submit Button -->
-              <div class="form-group col-lg-12 mx-auto mb-0" >
-                <a href="#" class="btn btn-primary btn-block py-2">
+              <div class="form-group col-lg-12 mx-auto mb-0">
+                <button class="btn btn-primary btn-block py-2">
                   <span class="font-weight-bold">Create your account</span>
-                </a>
+                </button>
               </div>
               <!-- Already Registered -->
               <div class="text-center w-100">
@@ -172,23 +173,43 @@
 </template>
 
 <script>
+const moment = require('moment')
 export default {
   name: "Register",
-  data(){
-    return{
-      phone: '',
+  data() {
+    return {
+      email: '',
+      firstName: '',
+      lastName: '',
+      gender: '',
+      date: '',
+      password: '',
     }
   },
-  methods:{
+  computed: {},
+  methods: {
+    registerUser() {
+      this.$store.dispatch('registerUser', {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        gender: this.gender,
 
+        email: this.email,
+        password: this.password,
+      }).then(response => {
+            this.$router.push('/')
+          }
+      )
+    }
   }
 };
 </script>
 
 <style scoped>
-.container{
+.container {
   margin-top: 70px;
 }
+
 .form-control:not(select) {
   padding: 1.5rem 0.5rem;
 }
@@ -203,8 +224,8 @@ select.form-control {
   font-weight: bold;
   font-size: 0.9rem;
 }
+
 .form-control:focus {
   box-shadow: none;
 }
-
 </style>
