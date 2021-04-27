@@ -80,7 +80,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .slogan{
   display: flex;
   align-items: center;
@@ -248,12 +248,6 @@ export default {
     margin-top: 350px;
     margin-bottom: 250px;
     background-size: auto;
-  }
-  .slogan h1{
-    font-weight: bold;
-    color: #01a4b6;
-    font-size: 60px;
-    width: 300px;
   }
 
 }
