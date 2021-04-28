@@ -22,12 +22,18 @@ export default new Router({
     {
       path: "/login",
       name: "login",
-      component: Login
+      component: Login,
+      meta:{
+        requiresVisitor: true,
+      }
     },
     {
       path: "/registration",
       name: "register",
-      component: Registration
+      component: Registration,
+      meta:{
+        requiresVisitor: true,
+      }
     },
     {
       path: "/logout",
@@ -52,7 +58,10 @@ export default new Router({
     {
       path: "/profile",
       name: "profile",
-      component: Profile
+      component: Profile,
+      meta:{
+        requiresAuth: true,
+      }
     },
     {
       path: "/guides",
@@ -69,5 +78,6 @@ export default new Router({
       name: "flights",
       component:Flights
     }
-  ]
+  ],
 });
+

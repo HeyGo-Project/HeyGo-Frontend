@@ -193,7 +193,6 @@ export default {
         firstName: this.firstName,
         lastName: this.lastName,
         gender: this.gender,
-
         email: this.email,
         password: this.password,
       }).then(response => {

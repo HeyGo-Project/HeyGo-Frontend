@@ -1,26 +1,31 @@
-import { POST } from "../../api/axios";
-import { len } from "vuelidate/lib/validators/common";
-import cookie from 'js-cookie'
+import {POST} from "../../api/axios";
+import {len} from "vuelidate/lib/validators/common";
+import cookie from "js-cookie";
+import {store} from '../store'
 
 const loginUrl = process.env.VUE_APP_GATEWAY_LINK + "/authorization";
 const registerUrl = process.env.VUE_APP_GATEWAY_LINK + "/registration";
 
-//TODO: Change login according to backend
 export const signIn = async (email, password) => {
-  const response = await POST(`${loginUrl}` + `?email=` + `${email}` + `&password=` + `${password}`, + {
-    email,
-    password
-  });
-  if (!response.success) {
-    throw new Error("Incorrect email or password");
-  }
+    const response = await POST(
+        `${loginUrl}` + `?email=` + `${email}` + `&password=` + `${password}`
+    );
+    if (!response.success) {
+        throw new Error("Incorrect email or password");
+    }
 
-  const ACCESS_TOKEN = response.data.body.first.jwt
-    .toString()
-    .substring(7, len(response.data.body.first.jwt));
-  console.log(ACCESS_TOKEN)
-  cookie.set('accessToken', ACCESS_TOKEN)
-} ;
+    const ACCESS_TOKEN = response.data.body.first.jwt
+        .toString()
+        .substring(7, len(response.data.body.first.jwt))
+    cookie.set("accessToken", ACCESS_TOKEN);
+    store.state.user = {
+        email: response.data.body.second.email,
+        birthDate: response.data.body.second.birthDate,
+        lastName: response.data.body.second.lastName,
+        firstName: response.data.body.second.firstName,
+        gender: response.data.body.second.gender,
+    }
+};
 
 export const register = async (
     email,
@@ -28,17 +33,18 @@ export const register = async (
     firstName,
     lastName,
     birthDate,
-    gender,
+    gender
 ) => {
-  const response = await POST(`${registerUrl}`, {
-    email,
-    firstName,
-    lastName,
-    password,
-    gender,
-    birthDate,
-  });
-  if (!response.success) {
-    throw new Error("Error  creating user");
-  }
-}
+    const response = await POST(`${registerUrl}`, {
+        email,
+        firstName,
+        lastName,
+        password,
+        gender,
+        birthDate
+    });
+
+    if (!response.success) {
+        throw new Error("Error  creating user");
+    }
+};

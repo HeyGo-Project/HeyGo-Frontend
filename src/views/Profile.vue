@@ -6,7 +6,7 @@
           <img :src="imgUrl" alt="" width="200px" />
         </div>
         <div class="profile-nav-info">
-          <h3 class="user-name-comment">Alisher</h3>
+          <h3 class="user-name-comment">{{ firstName + " " +  lastName}}</h3>
           <div class="address">
             <p class="state">Almaty,</p>
             <span class="country">Kazakhstan</span>
@@ -21,9 +21,6 @@
             <div class="user-email">
               <i class="fa fa-envelope" style="margin-right: 10px"></i>{{ email }}
             </div>
-            <p class="mobile-number">
-              <i class="fa fa-phone" style="margin-right: 10px"></i>{{ phoneNumber }}
-            </p>
             <div class="user-bio">
               <p class="bio">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -94,17 +91,17 @@ export default {
   },
   data() {
     return {
-      firstName: "Alisher",
-      lastName: "Zharmukhambetov",
-      email: "alisher.zharm@gmail.com",
+      firstName: this.$store.state.user.firstName,
+      lastName: this.$store.state.user.lastName,
+      email: this.$store.state.user.email,
       imgUrl:
         "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
-      phoneNumber: "+77072109620",
       tabs: ["Review", "Settings"],
       selected: "Review"
     };
   },
   computed:{
+
   },
   methods: {
 
@@ -118,10 +115,12 @@ export default {
 
 .main {
   width: 100%;
+  margin-top: 20px;
   text-align: left;
   overflow-x: hidden;
   font-family: "Nunito", sans-serif;
   background: #e9e9e9;
+  margin-bottom: -32px;
 }
 
 .rate{
@@ -328,7 +327,7 @@ export default {
 
 @media (max-width: 400px) {
   .main{
-    margin: 0;
+    margin: 0 0 -32px;
   }
   .profile-header h3{
     font-size: 1.7rem;

@@ -5,61 +5,91 @@
     <form>
       <div class="row">
         <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="First name">
+          <input
+              type="text"
+              class="form-control"
+              placeholder="First name"
+              :value="firsName"
+          />
         </div>
         <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Last name">
+          <input
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+              :value="lastName"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Email" :value="email"/>
         </div>
         <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Phone number">
-        </div>
-        <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Email" >
-        </div>
-        <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Passport Number">
+          <input
+              type="text"
+              class="form-control"
+              placeholder="Passport Number"
+          />
         </div>
 
         <div class="dropdown col-md-6">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Male
+          <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+          >
+            Male
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Female</a>
             <a class="dropdown-item" href="#">Other</a>
           </div>
         </div>
+
       </div>
+
+
     </form>
     <button class="updateProfile btn btn-primary ">
       Sign up
     </button>
+    <hr >
   </div>
 </template>
 
 <script>
 export default {
-
-}
+  data() {
+    return {
+      firsName: this.$store.state.user.firstName,
+      lastName: this.$store.state.user.lastName,
+      email: this.$store.state.user.email
+    };
+  }
+};
 </script>
 
 <style scoped lang="scss">
-.profile-settings{
+.profile-settings {
   alignment: center;
   width: 800px;
 }
-.col-md-6{
+
+.col-md-6 {
   margin-bottom: 20px;
 }
 
 @media (max-width: 400px) {
-  .profile-settings{
+  .profile-settings {
     width: 300px;
   }
-  .dropdown{
+  .dropdown {
     margin-left: 90px;
   }
-  .updateProfile{
+  .updateProfile {
     alignment: center;
     margin-bottom: 10px;
     margin-left: 90px;
