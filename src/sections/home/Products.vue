@@ -1,7 +1,7 @@
 <template>
   <div class="products" id="products">
     <div class="container">
-      <h1 class=" oservice text-center p-4">Our Services</h1>
+      <h1 class="service text-center p-4">Our Services</h1>
       <div class="row">
         <div
           class="col-md-4"
