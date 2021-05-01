@@ -58,8 +58,8 @@
               </div>
               <div class="col-md-3">
                 <div class="form-btn">
-                  <router-link class="btn submit-btn" to="/flights/timetable">
-                    <button class="submit-btn" @click="">
+                  <router-link  to="/flights/timetable">
+                    <button style="text-decoration: none" class="btn submit-btn" >
                       Check availability
                     </button>
                   </router-link>
