@@ -10,74 +10,78 @@ import Registration from "./components/Auth/Registration";
 import Login from "./components/Auth/Login";
 import Logout from "./components/Auth/Logout";
 import Flights from "./views/Flights";
+import Timetable from "./sections/flights/Timetable"
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
-  base: process.env.BASE_URL,
-  userData:{
+    mode: "history",
+    base: process.env.BASE_URL,
+    userData: {
 
-  },
-  routes: [
-    {
-      path: "/login",
-      name: "login",
-      component: Login,
-      meta:{
-        requiresVisitor: true,
-      }
     },
-    {
-      path: "/registration",
-      name: "register",
-      component: Registration,
-      meta:{
-        requiresVisitor: true,
-      }
-    },
-    {
-      path: "/logout",
-      name: "logout",
-      component: Logout
-    },
-    {
-      path: "/",
-      name: "home",
-      component: Home
-    },
-    {
-      path: "/hotels",
-      name: "hotels",
-      component: Hotels
-    },
-    {
-      path: "/hotel",
-      name: "hotel",
-      component: Hotel
-    },
-    {
-      path: "/profile",
-      name: "profile",
-      component: Profile,
-      meta:{
-        requiresAuth: true,
-      }
-    },
-    {
-      path: "/guides",
-      name: "guides",
-      component:Guidelist
-    },
-    {
-      path: "/hotels/search",
-      name: "searchHotel",
-      component:SearchHotel
-    },
-    {
-      path: "/flights",
-      name: "flights",
-      component:Flights
-    }
-  ],
+    routes: [{
+            path: "/login",
+            name: "login",
+            component: Login,
+            meta: {
+                requiresVisitor: true,
+            }
+        },
+        {
+            path: "/registration",
+            name: "register",
+            component: Registration,
+            meta: {
+                requiresVisitor: true,
+            }
+        },
+        {
+            path: "/logout",
+            name: "logout",
+            component: Logout
+        },
+        {
+            path: "/",
+            name: "home",
+            component: Home
+        },
+        {
+            path: "/hotels",
+            name: "hotels",
+            component: Hotels
+        },
+        {
+            path: "/hotel",
+            name: "hotel",
+            component: Hotel
+        },
+        {
+            path: "/profile",
+            name: "profile",
+            component: Profile,
+            meta: {
+                requiresAuth: true,
+            }
+        },
+        {
+            path: "/guides",
+            name: "guides",
+            component: Guidelist
+        },
+        {
+            path: "/hotels/search",
+            name: "searchHotel",
+            component: SearchHotel
+        },
+        {
+            path: "/flights",
+            name: "flights",
+            component: Flights
+        },
+        {
+            path: "/flights/timetable",
+            name: "timetable",
+            component: Timetable
+        },
+    ],
 });
-
