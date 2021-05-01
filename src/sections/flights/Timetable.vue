@@ -51,7 +51,7 @@
          margin: 0 auto;
          box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);"
          v-for="flight in flights"
-         :key="flight.flightPrice"
+         :key="flight.flightID"
     >
       <div class="card-body">
         <div class="row justify-content-start">
