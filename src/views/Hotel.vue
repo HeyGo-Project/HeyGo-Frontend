@@ -321,7 +321,6 @@ img {
   font-weight: 400;
 }
 
-
 .purchase-info input {
   width: 60px;
 }

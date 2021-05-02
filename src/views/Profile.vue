@@ -56,6 +56,7 @@
                 :key="tab"
                 @click="selected = tab;"
                 :class="['tab-btn', { active: selected === tab }]"
+                v-if=""
               >
                 {{ tab }}
               </li>
@@ -83,11 +84,13 @@
 import "jquery";
 import Review from "../sections/profile/Review";
 import Settings from "../sections/profile/Settings";
+import Offers from "../sections/profile/Offers";
 export default {
   name: "Profile",
   components: {
     Review,
-    Settings
+    Settings,
+    Offers
   },
   data() {
     return {
@@ -96,7 +99,7 @@ export default {
       email: this.$store.state.user.email,
       imgUrl:
         "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
-      tabs: ["Review", "Settings"],
+      tabs: ["Review", "Settings", "Offers"],
       selected: "Review"
     };
   },
@@ -121,6 +124,10 @@ export default {
   font-family: "Nunito", sans-serif;
   background: #e9e9e9;
   margin-bottom: -32px;
+}
+
+.container{
+  margin-bottom: 15px;
 }
 
 .rate{
@@ -270,6 +277,7 @@ export default {
 .active {
   box-shadow: 0px -3px 0px #01A4B6 inset;
   font-weight: bold;
+
 }
 @media (max-width: 1100px) {
   .profile-side{

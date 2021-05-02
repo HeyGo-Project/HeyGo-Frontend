@@ -1,5 +1,5 @@
 <template>
-  <div class="my-class">
+  <div class="container my-class">
     <search/>
 <!--    later add vuex to change with button -->
 
