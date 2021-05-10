@@ -76,7 +76,48 @@
           also free. Second bag check fees are waived for loyalty program members.
         </h6>
 
+        <div>
+          <h5 style="
+            color: #555555;
+            text-align: left;
+            margin-top: 100px;
+            font-weight: bolder"
+          >
+            Payment information
+          </h5>
+          <input class="form-control"
+                 placeholder="Card number"
+                 style="max-width: 375px;margin-left: 15px;"
+                 type="text"
+          >
+          <div class="input-group" style="margin-top: 30px">
+            <input class="form-control"
+                   placeholder="dd/mm/yyyy"
+                   style="max-width: 180px;margin-left: 15px;"
+                   type="text"
+            >
+            <input class="form-control"
+                   placeholder="CVV code"
+                   style="margin-left: 15px; max-width: 180px;"
+                   type="text"
+            >
+          </div>
+
+        </div>
+
       </div>
+
+
+      <router-link  to="/checkout/summary">
+        <button style="background: #17a2b8;
+         float: left;
+         margin-top: 30px;
+         color: white;" class="btn submit-btn"
+        >
+          Check availability
+        </button>
+      </router-link>
+
     </div>
 
     <div class="right-side">
@@ -96,18 +137,11 @@
               Duration 14:00-15:45
             </div>
           </div>
-
-
-
-
         </div>
-
       </div>
-
       <div style="margin-top: 200px">
         <img alt="" src="/img/svg/Bag.svg">
       </div>
-
     </div>
   </div>
 
