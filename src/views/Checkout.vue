@@ -80,25 +80,38 @@
     </div>
 
     <div class="right-side">
-      <div class="justify-content-start flight-depart" style="padding: 10px">
-        <div class="airlines">
-          <h5>
+      <div class="justify-content-start flight-depart">
+        <div class="airlines" style="padding: 10px;font-size: 20px; font-weight: lighter">
+          <img alt="" height="50px" src="/img/products/airplane.jpg" style="border-radius: 50px" width="50px">
+          <div>
             Scat Airlines
-          </h5>
+          </div>
         </div>
         <div class="timetable">
-          <h5 style="color: crimson">
-            Departure 14:00
-          </h5>
-          <h5>
-            Duration 14:00-15:45
-          </h5>
+          <div style="margin-top: 15px; font-size: 20px; font-weight: lighter">
+            <div style="color: #006161">
+              Departure 14:00
+            </div>
+            <div>
+              Duration 14:00-15:45
+            </div>
+          </div>
+
+
+
 
         </div>
+
+      </div>
+
+      <div style="margin-top: 200px">
+        <img alt="" src="/img/svg/Bag.svg">
       </div>
 
     </div>
   </div>
+
+
 </template>
 
 <script>
@@ -122,26 +135,30 @@ export default {
   margin-left: 80px;
 }
 
-.right-side{
+.right-side {
   grid-column: 4/6;
   margin-right: 200px;
 }
 
-.flight-depart{
+.flight-depart {
   border-style: solid;
-  border-color: #17a2b8;
+  border-width: 1px;
+  border-color: #cdcdcd;
   border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 1.5rem;
   grid-auto-rows: minmax(100px, auto);
+
 }
 
-.airlines{
+.airlines {
   grid-column: 1/4;
 }
 
-.timetable{
+.timetable {
+
   grid-column: 4/8;
+  border-radius: 15px;
 }
 </style>
