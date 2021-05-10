@@ -11,6 +11,7 @@ import Login from "./components/Auth/Login";
 import Logout from "./components/Auth/Logout";
 import Flights from "./views/Flights";
 import Timetable from "./sections/flights/Timetable"
+import Checkout from "./views/Checkout";
 Vue.use(Router);
 
 export default new Router({
@@ -79,6 +80,11 @@ export default new Router({
             path: "/flights/timetable",
             name: "timetable",
             component: Timetable
+        },
+        {
+            path: "/checkout",
+            name: "checkout",
+            component: Checkout
         },
     ],
 });
