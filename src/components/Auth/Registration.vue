@@ -92,11 +92,12 @@
                 <input
                     id="formatDate"
                     type="date"
+                    max='2021-01-01'
                     name="formatDate"
                     class="form-control bg-white border-md border-left-0 pl-3"
                     v-model="date"
                 />
-                <p>{{ date }}</p>
+
               </div>
               <div class="input-group col-lg-12 mb-4">
                 <div class="input-group-prepend">

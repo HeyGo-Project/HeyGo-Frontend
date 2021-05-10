@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import {register, signIn} from "./api/auth";
+import { findHotelsInCity} from "./api/hotels";
 import cookie from "js-cookie";
 import axios from "axios";
 
@@ -17,6 +18,7 @@ export const store = new Vuex.Store({
             birthDate: '',
             gender: '',
         },
+        city: '',
         guides: [
             {
                 imgUrl:
@@ -132,6 +134,18 @@ export const store = new Vuex.Store({
                     reject(err);
                 }
             });
+        },
+        getHotelsFromCity(context, city){
+            return new Promise((resolve, reject)=>{
+                try {
+                    findHotelsInCity(city.city).then(r=>{
+                        resolve(r + "works!");
+                    });
+                }catch (err) {
+                    console.log(err);
+                    reject(err);
+                }
+            })
         }
     }
 });

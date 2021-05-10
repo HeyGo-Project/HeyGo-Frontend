@@ -10,54 +10,22 @@
         <div class="row">
         </div>
         <div class="booking-form">
-          <form>
+          <form @submit.prevent="findHotel">
             <div class="row no-margin">
-              <div class="col-md-3">
+              <div class="col-md-9">
                 <div class="form-group">
                   <span class="form-label">Destination</span>
                   <label>
                     <input
                         class="form-control"
                         type="text"
-                        placeholder="Country, ZIP, city..."
+                        placeholder="City Code"
+                        v-model="city"
                     />
                   </label>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="row no-margin">
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <span class="form-label">Check In</span>
-                      <label>
-                        <input class="form-control" type="date" required />
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <span class="form-label">Check out</span>
-                      <label>
-<!--                        <input placeholder="Date"  class="form-control" type="date" required onfocus="(this.type='date')"/>-->
-                        <input type="date" class="form-control" required>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <span class="form-label">Guests</span>
-                      <label>
-                        <select class="form-control">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                        </select>
-                      </label>
-                      <span class="select-arrow"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               <div class="col-md-3">
                 <div class="form-btn">
                   <button class="submit-btn">Check availability</button>
@@ -76,7 +44,19 @@
 export default {
   name: "Hotels",
   data() {
-    return {};
+    return {
+      city: '',
+    };
+  },
+  methods:{
+    findHotel(){
+      this.$store.dispatch('getHotelsFromCity', {
+        city: this.city
+      }).then(response =>{
+            this.$store.state.city = this.city
+          }
+      )
+    }
   }
 };
 </script>
@@ -146,6 +126,7 @@ export default {
   position: relative;
   padding: 25px;
   margin-bottom: 0px;
+  text-align: center;
 }
 
 .booking-form .form-group:after {
@@ -172,21 +153,13 @@ export default {
   padding: 0;
 }
 
-.booking-form .form-control::-webkit-input-placeholder {
-  color: #01A4B6;
-}
 
-.booking-form .form-control:-ms-input-placeholder {
-  color: #01A4B6;
-}
 
 .booking-form .form-control::placeholder {
   color: #01A4B6;
 }
 
-.booking-form input[type="date"].form-control:invalid {
-  color: #01A4B6;
-}
+
 
 .booking-form select.form-control {
   -webkit-appearance: none;

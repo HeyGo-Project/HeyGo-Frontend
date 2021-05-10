@@ -25,6 +25,7 @@ export const signIn = async (email, password) => {
         firstName: response.data.body.second.firstName,
         gender: response.data.body.second.gender,
     }
+    localStorage.setItem('userData', JSON.stringify(store.state.user))
 };
 
 export const register = async (
