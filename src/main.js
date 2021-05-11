@@ -7,6 +7,7 @@ import VueAxios from 'vue-axios'
 import { store } from './store/store'
 import moment from 'moment'
 
+
 window.$ = window.jQuery = jQuery;
 
 import 'popper.js';

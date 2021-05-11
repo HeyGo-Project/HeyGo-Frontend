@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import {register, signIn, getUser} from "./api/auth";
-import { findHotelsInCity} from "./api/hotels";
+import {findHotelsInCity} from "./api/hotels";
 import cookie from "js-cookie";
 import axios from "axios";
 
@@ -20,7 +20,7 @@ export const store = new Vuex.Store({
             gender: '',
             verified: false,
         },
-        hotels:[
+        hotels: [
             {
                 name: ''
             }
@@ -120,17 +120,17 @@ export const store = new Vuex.Store({
                 }
             })
         },
-        getUserData(context){
+        getUserData(context) {
             return new Promise((resolve, reject) => {
-                    try {
-                        getUser().then(r =>{
-                            resolve(r + "works!");
-                        })
-                    }catch (err) {
-                        context.commit("setError", err);
-                        console.log(err);
-                        reject(err);
-                    }
+                try {
+                    getUser().then(r => {
+                        resolve(r + "works!");
+                    })
+                } catch (err) {
+                    context.commit("setError", err);
+                    console.log(err);
+                    reject(err);
+                }
             })
         },
         registerUser(context, credentials) {
@@ -146,7 +146,7 @@ export const store = new Vuex.Store({
                     ).then(r => {
                         context.commit("retrieveUser",
                             credentials,
-                            );
+                        );
                         resolve(r + "works!");
                     });
                 } catch (err) {
@@ -155,13 +155,13 @@ export const store = new Vuex.Store({
                 }
             });
         },
-        getHotelsFromCity(context, city){
-            return new Promise((resolve, reject)=>{
+        getHotelsFromCity(context, city) {
+            return new Promise((resolve, reject) => {
                 try {
-                    findHotelsInCity(city.city).then(r=>{
+                    findHotelsInCity(city.city).then(r => {
                         resolve(r + "works!");
                     });
-                }catch (err) {
+                } catch (err) {
                     console.log(err);
                     reject(err);
                 }

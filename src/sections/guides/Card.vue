@@ -1,26 +1,36 @@
 <template>
   <div class="main container my-3 py-5 text-center">
+
+    <div style="margin-top: 8%">
+      <h1>Search guides</h1>
+      <input
+          class="form-control"
+          placeholder="A guide's name"
+          v-model="search"
+          type="text"
+      >
+    </div>
+
     <section id="guide">
       <div class="text-center">
         <div class="row" style="margin: auto">
           <!--          <div class="col-lg-3 col-md-6">-->
           <div
-            class="card"
-            v-for="guides in guides"
-            :key="guides.firstName"
-            :class="[{ professional: guides.professional }]"
-            style="flex-shrink: 3;
+              v-for="guide in filteredGuides"
+              :class="[{ professional: guide.professional }]"
+              class="card"
+              style="flex-shrink: 3;
                margin: 120px 25px 10px;
                height: auto;
                padding: 30px;
                width: 300px;"
           >
             <div class="">
-              <img :src="guides.imgUrl" alt="" class="img-fluid" />
-              <h3>{{ guides.firstName + " " + guides.lastName }}</h3>
-              <h5>{{ guides.position }}</h5>
+              <img :src="guide.imgUrl" alt="" class="img-fluid"/>
+              <h3>{{ guide.firstName + " " + guide.lastName }}</h3>
+              <h5>{{ guide.position }}</h5>
               <p>
-                {{ guides.legend }}
+                {{ guide.legend }}
               </p>
             </div>
           </div>
@@ -35,8 +45,18 @@
 export default {
   name: "Card",
   computed: {
-    guides(){
+    guides() {
       return this.$store.state.guides
+    },
+    filteredGuides() {
+      return this.$store.state.guides.filter(guide => {
+        return guide.firstName.indexOf(this.search) !== -1
+      })
+    }
+  },
+  data() {
+    return {
+      search: '',
     }
   }
 };
@@ -46,15 +66,18 @@ export default {
 * {
   padding: 0;
 }
+
 .main {
   font-family: Nunito, sans-serif;
   font-size: 14px;
   font-weight: 450;
   color: #777;
 }
+
 #guide {
   margin: 0;
 }
+
 #guide img {
   margin-top: -80px;
   alignment: center;
@@ -66,18 +89,22 @@ export default {
   z-index: 5;
   background: white;
 }
+
 #guide i {
   font-size: 260px;
   color: #555;
 }
+
 #guide p {
   font-weight: 500;
 }
+
 #guide .card {
   border-radius: 5px;
   box-shadow: 5px 5px 15px #e74c3c;
   margin-top: 80px;
 }
+
 #guide .card:hover {
   background: #e74c3c;
   color: #fff;
@@ -85,23 +112,28 @@ export default {
   border: none;
   box-shadow: 5px 5px 10px #9e9e9e;
 }
+
 #guide .card:hover h3,
 #guide .card:hover i {
   color: #fff;
 }
+
 #guide h3 {
   color: black;
   font-size: 23px;
   text-align: center;
 }
+
 #guide h5,
 p {
   margin-top: 10px;
 }
+
 #guide .professional {
   border-radius: 5px;
   box-shadow: 5px 5px 15px #01a4b6;
 }
+
 #guide .professional:hover {
   background: #01a4b6;
   color: #fff;
