@@ -11,5 +11,4 @@ export const findHotelsInCity = async (city) => {
     if (!response.success) {
         throw new Error("Error getting the list hotels in this city");
     }
-
 }

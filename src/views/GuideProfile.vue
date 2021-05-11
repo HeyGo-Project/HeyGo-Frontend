@@ -46,11 +46,11 @@
           <div class="nav">
             <ul>
               <li
-                v-for="tab in tabs"
-                :key="tab"
-                @click="selected = tab"
-                :class="['tab-btn', { active: selected === tab }]"
-                v-if=""
+                  v-for="tab in tabs"
+                  :key="tab"
+                  @click="selected = tab"
+                  :class="['tab-btn', { active: selected === tab }]"
+                  v-if=""
               >
                 {{ tab }}
               </li>
@@ -88,8 +88,8 @@ export default {
       lastName: this.$store.state.user.lastName,
       email: this.$store.state.user.email,
       imgUrl:
-        "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
-      tabs: ["Review", "Settings", "Offers"],
+          "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
+      tabs: ["Review"],
       selected: "Review"
     };
   },

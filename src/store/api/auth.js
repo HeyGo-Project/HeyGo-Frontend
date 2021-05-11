@@ -1,14 +1,19 @@
-import {POST} from "../../api/axios";
+import {GET, POST} from "../../api/axios";
 import {len} from "vuelidate/lib/validators/common";
 import cookie from "js-cookie";
 import {store} from '../store'
+import https from "https";
 
 const loginUrl = process.env.VUE_APP_GATEWAY_LINK + "/authorization";
 const registerUrl = process.env.VUE_APP_GATEWAY_LINK + "/registration";
-
+const getUserLink = process.env.VUE_APP_INTEGRATION_LINK + "clients/token"
+const agent = new https.Agent({
+    rejectUnauthorized: false
+});
 export const signIn = async (email, password) => {
     const response = await POST(
-        `${loginUrl}` + `?email=` + `${email}` + `&password=` + `${password}`
+        `${loginUrl}` + `?email=` + `${email}` + `&password=` + `${password}`,
+        {httpsAgent: agent}
     );
     if (!response.success) {
         throw new Error("Incorrect email or password");
@@ -27,6 +32,22 @@ export const signIn = async (email, password) => {
     }
     localStorage.setItem('userData', JSON.stringify(store.state.user))
 };
+
+
+export const getUser = async () => {
+    const token = cookie.get("accessToken")
+    const response = await GET(
+        `${getUserLink}`,
+        null,
+        {
+            'token': store.state.token,
+        }
+    )
+    if (!response.success) {
+        throw new Error("Incorrect email or password");
+    }
+
+}
 
 export const register = async (
     email,

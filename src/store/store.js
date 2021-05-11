@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import {register, signIn} from "./api/auth";
+import {register, signIn, getUser} from "./api/auth";
 import { findHotelsInCity} from "./api/hotels";
 import cookie from "js-cookie";
 import axios from "axios";
@@ -12,12 +12,19 @@ export const store = new Vuex.Store({
         error: null,
         token: cookie.get("accessToken") || null,
         user: {
+            id: 0,
             email: '',
             firstName: '',
             lastName: '',
             birthDate: '',
             gender: '',
+            verified: false,
         },
+        hotels:[
+            {
+                name: ''
+            }
+        ],
         city: '',
         guides: [
             {
@@ -111,6 +118,19 @@ export const store = new Vuex.Store({
                     console.log(err);
                     reject(err);
                 }
+            })
+        },
+        getUserData(context){
+            return new Promise((resolve, reject) => {
+                    try {
+                        getUser().then(r =>{
+                            resolve(r + "works!");
+                        })
+                    }catch (err) {
+                        context.commit("setError", err);
+                        console.log(err);
+                        reject(err);
+                    }
             })
         },
         registerUser(context, credentials) {

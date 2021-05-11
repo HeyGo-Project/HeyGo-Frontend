@@ -12,6 +12,7 @@ import Logout from "./components/Auth/Logout";
 import Flights from "./views/Flights";
 import Timetable from "./sections/flights/Timetable"
 import Checkout from "./views/Checkout";
+import GuideProfile from "./views/GuideProfile";
 Vue.use(Router);
 
 export default new Router({
@@ -86,5 +87,10 @@ export default new Router({
             name: "checkout",
             component: Checkout
         },
+        {
+            path: "/guide",
+            name: "guide",
+            component: GuideProfile
+        }
     ],
 });

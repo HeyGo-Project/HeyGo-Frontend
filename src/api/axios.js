@@ -1,5 +1,11 @@
 import axios from "axios";
+import https from 'https'
 
+import cookie from "js-cookie";
+const agent = new https.Agent({
+  rejectUnauthorized: false
+});
+const token = cookie.get("accessToken")
 const axiosConfig = axios.create({
   baseURL: process.env.API_URL,
   headers: {
@@ -8,7 +14,7 @@ const axiosConfig = axios.create({
     "Access-Control-Allow-Origin": "*",
     "X-Requested-With": "XMLHttpRequest",
     "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+    "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
   }
 });
 
