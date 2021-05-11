@@ -65,8 +65,8 @@ export default {
       logoutPath: '/logout',
       nav: [
         {
-          link: "/services",
-          text: "Services"
+          link: "/profile",
+          text: "Profile"
         },
         {
           link: "/about",

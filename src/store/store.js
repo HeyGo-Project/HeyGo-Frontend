@@ -20,11 +20,6 @@ export const store = new Vuex.Store({
             gender: '',
             verified: false,
         },
-        hotels: [
-            {
-                name: ''
-            }
-        ],
         city: '',
         guides: [
             {
