@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main container" >
     <div class="checkout-form">
       <h4 style="
       color: #01a4b6;
@@ -46,18 +46,11 @@
           Contact information
         </h6>
 
-        <div class="input-group" style="margin-top: 30px">
-          <input class="form-control"
-                 placeholder="Email"
-                 style="max-width: 180px;margin-left: 15px;"
-                 type="text"
-          >
-          <input class="form-control"
-                 placeholder="Phone number"
-                 style="margin-left: 15px; max-width: 180px;"
-                 type="text"
-          >
-        </div>
+        <input class="form-control"
+               placeholder="Email"
+               style="max-width: 180px;margin-left: 15px;"
+               type="text"
+        >
 
         <h5 style="
             color: #555555;
@@ -102,9 +95,7 @@
                    type="text"
             >
           </div>
-
         </div>
-
       </div>
 
 
@@ -159,18 +150,18 @@ export default {
   margin-top: 8%;
   /*grid params*/
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-gap: 1.5rem;
   grid-auto-rows: minmax(100px, auto);
 }
 
 .checkout-form {
-  grid-column: 1/4;
+  grid-column: 1/5;
   margin-left: 80px;
 }
 
 .right-side {
-  grid-column: 4/6;
+  grid-column: 5/8;
   margin-right: 200px;
 }
 
