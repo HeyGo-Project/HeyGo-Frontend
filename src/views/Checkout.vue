@@ -30,11 +30,15 @@
                  placeholder="First Name"
                  style="max-width: 180px;margin-left: 15px;"
                  type="text"
+                 :value="name"
+                 disabled
           >
           <input class="form-control"
                  placeholder="Second Name"
                  style="margin-left: 15px; max-width: 180px;"
                  type="text"
+                 :value="lastName"
+                 disabled
           >
         </div>
 
@@ -50,6 +54,8 @@
                placeholder="Email"
                style="max-width: 180px;margin-left: 15px;"
                type="text"
+               :value="email"
+               disabled
         >
 
         <h5 style="
@@ -141,7 +147,14 @@
 
 <script>
 export default {
-  name: "Checkout"
+  name: "Checkout",
+  data(){
+    return{
+      name: this.$store.state.user.firstName,
+      lastName: this.$store.state.user.lastName,
+      email: this.$store.state.user.email
+    }
+  }
 }
 </script>
 

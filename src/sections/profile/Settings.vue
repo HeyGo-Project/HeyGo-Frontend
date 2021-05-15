@@ -62,23 +62,7 @@
       Upload
     </button>
     <hr>
-<!--    TODO: Закончить-->
-    <div class="instruction">
-      <h2>To become a must to the following:</h2>
-      <h5>1. Upload your  certificate of criminal record</h5>
-      <div class="criminal-file custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile03">
-        <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-      </div>
-      <h5 style="margin-top: 15px">2. A document proving your psychological stability</h5>
-      <div class="psycho-file custom-file">
-        <input type="file" class="custom-file-input" >
-        <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-      </div>
-      <div class="accept-terms">
-        <p >After sending this administration will check provided information</p>
-      </div>
-    </div>
+
   </div>
 </template>
 

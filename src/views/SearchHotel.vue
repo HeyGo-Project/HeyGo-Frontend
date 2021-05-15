@@ -19,9 +19,9 @@ export default {
       hotelData:[
         {
           imgUrl: "https://avatars.mds.yandex.net/get-altay/2433982/2a00000170d9aa8cda92c196d732af17a3e1/XXL",
-          name:"Rixos",
-          city: "Almaty",
-          klass: "Deluxe Double Room (2 Adults + 1 Child)",
+          name:"Hotel Indigo Gran Via",
+          city: "Madrid",
+          klass: "DOUBLE STANDARD_ROOM",
           support: "FREE cancellation ",
           beds:"1 double bed",
           roomsRemain: "Only 7 rooms left at this price on our site",
@@ -29,11 +29,21 @@ export default {
         },
         {
           imgUrl: "https://avatars.mds.yandex.net/get-altay/2433982/2a00000170d9aa8cda92c196d732af17a3e1/XXL",
-          name:"Rixos",
-          city: "Almaty",
-          klass: "Deluxe Double Room (2 Adults + 1 Child)",
+          name:"Mercure Madrid Plaza de Espana",
+          city: "Madrid",
+          klass: "SINGLE SUPERIOR_ROOM",
           support: "FREE cancellation",
-          beds:"1 double bed",
+          beds:"2 double beds",
+          roomsRemain: "Only 7 rooms left at this price on our site",
+          rating:"5"
+        },
+        {
+          imgUrl: "https://avatars.mds.yandex.net/get-altay/2433982/2a00000170d9aa8cda92c196d732af17a3e1/XXL",
+          name:"The Westin Palace Madrid",
+          city: "Madrid",
+          klass: "SINGLE DELUXE_ROOM",
+          support: "FREE cancellation",
+          beds:"2 double beds",
           roomsRemain: "Only 7 rooms left at this price on our site",
           rating:"5"
         },

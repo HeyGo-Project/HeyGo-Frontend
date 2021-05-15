@@ -32,7 +32,7 @@
 
       <!-- card right -->
       <div class="product-content">
-        <h2 class="product-title">Renion Park hotel</h2>
+        <h2 class="product-title">Hotel Indigo Gran Via</h2>
         <p>{{ location }}</p>
         <div class="product-rating">
           <i class="fa fa-star"></i>
@@ -125,12 +125,7 @@ export default {
         {src: "/img/hotelimg/h3.jpg"},
         {src: "/img/hotelimg/h4.jpg"},
       ],
-      about:
-          "Located in Almaty, 18 km from Medeo, Renion Park Hotel provides accommodation with a restaurant, free private parking, a fitness centre and a bar. Each accommodation at the 4-star hotel has city views, and guests can enjoy access to an indoor pool and a sauna. The accommodation offers a 24-hour front desk, airport transfers, room service and free WiFi throughout the property.\n" +
-          "All units are equipped with air conditioning, a flat-screen TV with cable channels, a fridge, a kettle, a shower, a hairdryer and a desk. At the hotel every room is fitted with a wardrobe and a private bathroom.\n" +
-          "Popular points of interest near the accommodation include Ascension Cathedral, Gvardeytsev-Panfilovtsev Park and Almaty Central Mosque. The nearest airport is Almaty International Airport, 11 km from Renion Park Hotel.\n" +
-          "Couples particularly like the location — they rated it 9.4 for a two-person trip.\n" +
-          "We speak your language!",
+      about: "ADVANCE SAVER BKFST Special savings advance\\npurchase. Includes breakfast for one or two\\nSTANDARD ROOM NS CONTEMPORARY STYLED DOUBLE",
       location: "Almaty • Show om map • 900 m from centre",
     }
   },

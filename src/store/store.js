@@ -3,7 +3,6 @@ import Vuex from "vuex";
 import {register, signIn, getUser} from "./api/auth";
 import {findHotelsInCity} from "./api/hotels";
 import cookie from "js-cookie";
-import axios from "axios";
 
 Vue.use(Vuex);
 
@@ -34,8 +33,8 @@ export const store = new Vuex.Store({
             {
                 imgUrl:
                     "https://www.indiewire.com/wp-content/uploads/2020/12/lord-of-rings-1.png",
-                firstName: "Alisher",
-                lastName: "Zharmukhambetov",
+                firstName: "Yelzhas",
+                lastName: "Sultanov",
                 position: "Professional guide",
                 professional: false,
                 legend: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."

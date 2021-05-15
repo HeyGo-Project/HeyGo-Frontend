@@ -28,7 +28,9 @@
 
               <div class="col-md-3">
                 <div class="form-btn">
+                  <router-link to="/hotels/search" class="nav-link">
                   <button class="submit-btn">Check availability</button>
+                  </router-link>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="review-list" style="margin-bottom: 100px"  >
-    <div class="profile-review-top">
+    <div class="profile-review-top" v-if="this.$store.state.user.verified">
       <div class="profile-img col-md-2">
         <img :src="imgUrl" alt="" width="120px" height="120" />
       </div>
@@ -29,7 +29,22 @@
         </div>
       </div>
     </div>
-
+    <div class="instruction" style="margin-left: 100px; width: 100%">
+      <h2>To become a must to the following:</h2>
+      <h5>1. Upload your  certificate of criminal record</h5>
+      <div class="criminal-file custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile03">
+        <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+      </div>
+      <h5 style="margin-top: 15px">2. A document proving your psychological stability</h5>
+      <div class="psycho-file custom-file">
+        <input type="file" class="custom-file-input" >
+        <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+      </div>
+      <div class="accept-terms">
+        <p >After sending this administration will check provided information</p>
+      </div>
+    </div>
   </div>
 </template>
 
