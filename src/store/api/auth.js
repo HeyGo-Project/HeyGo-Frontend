@@ -15,9 +15,12 @@ export const signIn = async (email, password) => {
         `${loginUrl}` + `?email=` + `${email}` + `&password=` + `${password}`,
         {httpsAgent: agent}
     );
+
     if (!response.success) {
         throw new Error("Incorrect email or password");
     }
+
+    console.log(response)
 
     const ACCESS_TOKEN = response.data.body.first.jwt
         .toString()
@@ -35,7 +38,6 @@ export const signIn = async (email, password) => {
 
 
 export const getUser = async () => {
-    const token = cookie.get("accessToken")
     const response = await GET(
         `${getUserLink}`,
         null,
