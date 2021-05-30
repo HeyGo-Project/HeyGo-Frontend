@@ -56,7 +56,7 @@
               <div class="text-center w-100">
                 <p class="text-muted font-weight-bold">
                   Don't have an account?
-                  <a href="#" class="text-primary ml-2">Register</a>
+                  <a href="/registration" class="text-primary ml-2">Register</a>
                 </p>
               </div>
             </div>

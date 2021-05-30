@@ -3,10 +3,12 @@
     <div class="container" style="margin-top: 100px">
       <div class="profile-header">
         <div class="profile-img ">
-          <img :src="imgUrl" alt="" width="200px" />
+          <img :src="imgUrl" alt="" width="200px"/>
         </div>
         <div class="profile-nav-info">
-          <h3 class="user-name-comment">{{ this.$store.state.user.firstName + " " + this.$store.state.user.lastName }}</h3>
+          <h3 class="user-name-comment">
+            {{ this.$store.state.user.firstName + " " + this.$store.state.user.lastName }}
+          </h3>
           <div class="address">
             <p class="state">Almaty,</p>
             <span class="country">Kazakhstan</span>
@@ -27,9 +29,11 @@
                 eiusmod tempor incididunt.
               </p>
             </div>
-            <button class="createbtn" v-if="this.$store.state.user.verified">
-              <i class="fa-hand-peace-o"></i>Become a guide
-            </button>
+            <router-link to="/request">
+              <button v-if="this.$store.state.user.verified" class="createbtn">
+                Become a guide
+              </button>
+            </router-link>
             <div class="user-rating">
               <h3 class="rating">4.5</h3>
               <div class="rate">
@@ -46,11 +50,11 @@
           <div class="nav">
             <ul>
               <li
-                v-for="tab in tabs"
-                :key="tab"
-                @click="selected = tab"
-                :class="['tab-btn', { active: selected === tab }]"
-                v-if=""
+                  v-for="tab in tabs"
+                  v-if=""
+                  :key="tab"
+                  :class="['tab-btn', { active: selected === tab }]"
+                  @click="selected = tab"
               >
                 {{ tab }}
               </li>
@@ -88,7 +92,7 @@ export default {
       lastName: this.$store.state.user.lastName,
       email: this.$store.state.user.email,
       imgUrl:
-        "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
+          "https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png",
       tabs: ["Review", "Settings", "Offers"],
       selected: "Review"
     };
@@ -128,7 +132,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 

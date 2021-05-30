@@ -13,6 +13,9 @@ import Flights from "./views/Flights";
 import Timetable from "./sections/flights/Timetable"
 import Checkout from "./views/Checkout";
 import GuideProfile from "./views/GuideProfile";
+import Request from "./views/Request";
+
+
 Vue.use(Router);
 
 export default new Router({
@@ -91,6 +94,11 @@ export default new Router({
             path: "/guide",
             name: "guide",
             component: GuideProfile
-        }
+        },
+        {
+            path: "/request",
+            name: "request",
+            component: Request
+        },
     ],
 });
