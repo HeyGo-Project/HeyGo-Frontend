@@ -14,7 +14,7 @@ import Timetable from "./sections/flights/Timetable"
 import Checkout from "./views/Checkout";
 import GuideProfile from "./views/GuideProfile";
 import Request from "./views/Request";
-
+import CheckPayment from "./views/CheckPayment";
 
 Vue.use(Router);
 
@@ -100,5 +100,10 @@ export default new Router({
             name: "request",
             component: Request
         },
+        {
+            path: "/payment/check",
+            name: "checkPayment",
+            component: CheckPayment
+        }
     ],
 });

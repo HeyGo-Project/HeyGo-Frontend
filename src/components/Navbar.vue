@@ -72,6 +72,10 @@ export default {
           link: "/about",
           text: "About"
         },
+        {
+          link: "/payment/check",
+          text: "Check payment"
+        },
       ]
     };
   },
