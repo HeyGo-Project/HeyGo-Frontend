@@ -119,8 +119,35 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Checkout",
+  beforeCreate() {
+    axios
+      .get(
+        "/gateway-client/root-service/clients/token",
+        {
+          headers: {
+            token: `${this.$store.state.token}`
+          }
+        }
+      )
+      .then(res => {
+        this.$store.state.user = {
+          id: res.data.id,
+          email: res.data.email,
+          birthDate: res.data.birthDate,
+          lastName: res.data.lastName,
+          firstName: res.data.firstName,
+          gender: res.data.gender,
+          verified: res.data.verified
+        };
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
   data(){
     return{
       name: this.$store.state.user.firstName,

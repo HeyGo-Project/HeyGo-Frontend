@@ -101,7 +101,7 @@ export default {
   beforeCreate() {
     axios
         .get(
-            "http://localhost:8080/gateway-client/root-service/clients/token",
+            "/gateway-client/root-service/clients/token",
             {
               headers: {
                 token: `${this.$store.state.token}`

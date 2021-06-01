@@ -10,7 +10,7 @@
         <div class="row">
         </div>
         <div class="booking-form">
-          <form @submit.prevent="findHotel">
+          <form @submit.prevent="findPayment">
             <div class="row no-margin">
               <div class="col-md-9">
                 <div class="form-group">
@@ -19,8 +19,9 @@
                     <input
                       class="form-control"
                       type="text"
-                      placeholder="ID"
-                      v-model="city"
+                      placeholder="Signature"
+                      v-model="salt"
+                      :saltValue="salt"
                     />
                   </label>
                 </div>
@@ -28,9 +29,14 @@
 
               <div class="col-md-3">
                 <div class="form-btn">
-                  <router-link to="/hotels/search" class="nav-link">
-                    <button class="submit-btn">Check status</button>
-                  </router-link>
+                  <button class="submit-btn">
+                    <router-link class="navbar-brand" to="/payment/status">
+                      <button id="availability" class="availability btn btn-primary">
+                        Check status
+                      </button>
+                    </router-link>
+
+                   </button>
                 </div>
               </div>
             </div>
@@ -42,43 +48,77 @@
 
 </template>
 
-<script >
+<script>
+import axios from "axios";
+
 export default {
   name: "Hotels",
   data() {
     return {
-      city: '',
+      salt: ""
     };
   },
-  methods:{
-    findHotel(){
-      this.$store.dispatch('getHotelsFromCity', {
-        city: this.city
-      }).then(response =>{
-          this.$store.state.city = this.city
+  beforeCreate() {
+    axios
+      .get(
+        "/gateway-client/root-service/clients/token",
+        {
+          headers: {
+            token: `${this.$store.state.token}`
+          }
         }
       )
+      .then(res => {
+        this.$store.state.user = {
+          id: res.data.id,
+          email: res.data.email,
+          birthDate: res.data.birthDate,
+          lastName: res.data.lastName,
+          firstName: res.data.firstName,
+          gender: res.data.gender,
+          verified: res.data.verified
+        };
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+  methods: {
+    findPayment() {
+      axios
+        .post("/gateway-client/root-service/payments/status", {
+          "pg_payment_id": "",
+          "pg_salt": this.salt,
+        },  null).then(res => {
+          this.$store.state.paymentStatus = res.data.pg_status
+        console.log(this.$store.state.paymentStatus );
+      })
+        .catch(error => {
+          console.error(error);
+        });
     }
   }
 };
 </script>
 
 <style scoped lang="scss">
-.slogan{
+.slogan {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-.slogan h1{
-  font-weight:lighter;
+
+.slogan h1 {
+  font-weight: lighter;
   color: #01a4b6;
   font-size: 50px;
   width: 600px;
 }
+
 .section {
   position: relative;
-  height:60vh;
+  height: 60vh;
 }
 
 .section .section-center {
@@ -107,12 +147,12 @@ export default {
   border-radius: 2px;
 }
 
-.booking-form>form .row.no-margin {
+.booking-form > form .row.no-margin {
   margin-right: 0px;
   margin-left: 0px;
 }
 
-.booking-form>form .row.no-margin>[class*="col-"] {
+.booking-form > form .row.no-margin > [class*="col-"] {
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -149,11 +189,9 @@ export default {
 }
 
 
-
 .booking-form .form-control::placeholder {
   color: #01A4B6;
 }
-
 
 
 .booking-form select.form-control {
@@ -162,7 +200,7 @@ export default {
   appearance: none;
 }
 
-.booking-form select.form-control+.select-arrow {
+.booking-form select.form-control + .select-arrow {
   position: absolute;
   right: 0px;
   bottom: 30px;
@@ -175,7 +213,7 @@ export default {
   font-size: 14px;
 }
 
-.booking-form select.form-control+.select-arrow:after {
+.booking-form select.form-control + .select-arrow:after {
   content: '\279C';
   display: block;
   -webkit-transform: rotate(90deg);
@@ -209,12 +247,12 @@ export default {
 }
 
 @media (max-width: 400px) {
-  #booking{
+  #booking {
     margin-top: 350px;
     margin-bottom: 250px;
     background-size: auto;
   }
-  .slogan h1{
+  .slogan h1 {
     font-weight: bold;
     color: #01a4b6;
     font-size: 60px;

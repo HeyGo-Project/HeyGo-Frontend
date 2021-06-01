@@ -23,11 +23,7 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
           </div>
-          <router-link class="navbar-brand" to="/hotel">
-            <button id="availability" class="availability btn btn-primary">
-              Check availability
-            </button>
-          </router-link>
+       x
         </div>
       </div>
     </div>

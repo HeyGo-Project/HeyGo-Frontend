@@ -9,6 +9,8 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         error: null,
+        salt: '',
+        paymentStatus:'',
         token: cookie.get("accessToken") || null,
         user: {
             id: 0,
