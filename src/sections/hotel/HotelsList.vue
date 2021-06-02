@@ -8,16 +8,16 @@
 
       <div class="row">
         <div
-            class="col-md-4"
-            v-for="hotelsData in hotels"
-            :key="hotelsData.title"
+          class="col-md-4"
+          v-for="hotelsData in hotels"
+          :key="hotelsData.title"
         >
           <div class="card product-item">
             <img
-                :src="hotelsData.img"
-                class="card-img-top"
-                alt="..."
-                height="300px"
+              :src="hotelsData.img"
+              class="card-img-top"
+              alt="..."
+              height="300px"
             />
             <div class="card-body">
               <h5 class="card-title">{{ hotelsData.name }}</h5>
@@ -67,5 +67,4 @@ export default {
   margin-bottom: 10px;
 }
 </style>
-
 

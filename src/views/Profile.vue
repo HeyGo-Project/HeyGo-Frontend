@@ -30,7 +30,7 @@
               </p>
             </div>
             <router-link to="/request">
-              <button v-if="this.$store.state.user.verified" class="createbtn">
+              <button  class="createbtn">
                 Become a guide
               </button>
             </router-link>
@@ -101,7 +101,7 @@ export default {
   beforeCreate() {
     axios
         .get(
-            "/gateway-client/root-service/clients/token",
+            "http://localhost:8080/gateway-client/root-service/clients/token",
             {
               headers: {
                 token: `${this.$store.state.token}`

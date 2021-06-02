@@ -91,7 +91,6 @@ export default {
           "pg_salt": this.salt,
         },  null).then(res => {
           this.$store.state.paymentStatus = res.data.pg_status
-        console.log(this.$store.state.paymentStatus );
       })
         .catch(error => {
           console.error(error);

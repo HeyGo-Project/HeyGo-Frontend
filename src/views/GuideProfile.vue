@@ -6,7 +6,7 @@
           <img :src="imgUrl" alt="" width="200px" />
         </div>
         <div class="profile-nav-info">
-          <h3 class="user-name-comment">{{ this.$store.state.user.firstName + " " + this.$store.state.user.lastName }}</h3>
+          <h3 class="user-name-comment">Alibek Kerimkulov</h3>
           <div class="address">
             <p class="state">Almaty,</p>
             <span class="country">Kazakhstan</span>
@@ -19,17 +19,14 @@
           <div class="profile-side">
             <div class="user-email">
               <i class="fa fa-envelope" style="margin-right: 10px"></i
-              >{{ this.$store.state.user.email }}
+              >kerimkulov@mail.ru
             </div>
             <div class="user-bio">
               <p class="bio">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt.
+                {{ }}
               </p>
             </div>
-            <button class="createbtn" v-if="this.$store.state.user.verified">
-              <i class="fa-hand-peace-o"></i>Become a guide
-            </button>
+
             <div class="user-rating">
               <h3 class="rating">4.5</h3>
               <div class="rate">
@@ -40,6 +37,9 @@
                 <i class="fa fa-star" style="color: #ffda2f;"></i>
               </div>
             </div>
+            <button class="createbtn">
+              <i class="fa-hand-peace-o"></i>Hire guide for 10000 ₸
+            </button>
           </div>
         </div>
         <div class="right-side">
@@ -121,8 +121,8 @@ export default {
         });
   },
   methods: {
-    getUser() {
-
+    lol(){
+      window.open("https://api.paybox.money/pay.html?customer=4b6beac749a85267c176720e81d68167", "_blank")
     }
   }
 };

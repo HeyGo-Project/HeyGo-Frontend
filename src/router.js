@@ -17,6 +17,7 @@ import Request from "./views/Request";
 import CheckPayment from "./views/CheckPayment";
 import ViewPayment from "./views/ViewPayment";
 
+
 Vue.use(Router);
 
 export default new Router({
@@ -110,6 +111,6 @@ export default new Router({
             path: "/payment/status",
             name: "paymentStatus",
             component: ViewPayment
-        }
+        },
     ],
 });

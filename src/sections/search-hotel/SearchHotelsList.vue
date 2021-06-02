@@ -2,9 +2,9 @@
   <div>
     <div class="hotel-container">
       <div
-          v-for="hotels in searchData"
-          :key="hotels.city"
-          class="hotel-list"
+        v-for="hotels in searchData"
+        :key="hotels.city"
+        class="hotel-list"
       >
         <img :src="hotels.imgUrl" alt=""/>
         <div class="details">
@@ -23,7 +23,11 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
           </div>
-       x
+          <router-link class="navbar-brand" to="/hotel">
+            <button id="availability" class="availability btn btn-primary">
+              Check availability
+            </button>
+          </router-link>
         </div>
       </div>
     </div>

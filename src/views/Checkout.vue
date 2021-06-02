@@ -82,7 +82,7 @@
         <button style="background: #17a2b8;
          float: left;
          margin-top: 30px;
-         color: white;" class="btn submit-btn"
+         color: white;" class="btn submit-btn" @click="lol"
         >
           Check availability
         </button>
@@ -153,6 +153,11 @@ export default {
       name: this.$store.state.user.firstName,
       lastName: this.$store.state.user.lastName,
       email: this.$store.state.user.email
+    }
+  },
+  methods:{
+    lol(){
+      window.open("https://api.paybox.money/pay.html?customer=4b6beac749a85267c176720e81d68167", "_blank")
     }
   }
 }
