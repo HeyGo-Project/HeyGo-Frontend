@@ -107,36 +107,44 @@ export default {
   },
   methods:{
     sendRequest(){
-      //converting image:
-      const imgBase64 = (document.getElementById("imgFile").files[0])
-      const imgReader = new FileReader();
-      const sourceIMG = imgReader.readAsDataURL(imgBase64);
-
+      // //converting image:
+      // const imgBase64 = (document.getElementById("imgFile").files[0])
+      // const imgReader = new FileReader();
+      // const sourceIMG = imgReader.readAsDataURL(imgBase64);
+      //
 
       //converting pdf
       const pdfBase64 = document.getElementById("pdfFile").files[0]
       const pdfReader = new FileReader();
-      const sourcePDF = pdfReader.readAsDataURL(pdfBase64);
+      pdfReader.readAsDataURL(pdfBase64);
 
       const user = this.$store.state.user
 
-      const validationRequest = {
-            clientId: user.id,
-            comment: this.message,
-            fullName: user.firstName +" "+ user.lastName,
-            id: 0,
-            imageLink: "string",
-            passport: toString(sourceIMG),
-            personWPassport: toString(sourcePDF),
-            touristId: 0
-          }
+      pdfReader.onload = () => {
+        const pdfURL = pdfReader.result.split(',')[1]
 
-      axios.post("/gateway-client/root-service/validation_requests", validationRequest)
-              .then(
-                  response => {
-                    alert(response.data.id)
-                  }
-              )
+        const validationRequest = {
+          clientId: user.id,
+          comment: this.message,
+          fullName: user.firstName +" "+ user.lastName,
+          id: 0,
+          imageLink: "string",
+          passport: pdfURL,
+          personWPassport: pdfURL,
+          touristId: 0
+        }
+
+        axios.post("/gateway-client/root-service/validation_requests", validationRequest)
+            .then(
+                response => {
+                  alert(response.data.id)
+                }
+            )
+      }
+
+
+
+
 
 
       // const pdfReader = new FileReader();
