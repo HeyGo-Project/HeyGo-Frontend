@@ -10,6 +10,8 @@ const getUserLink = process.env.VUE_APP_INTEGRATION_LINK + "clients/token"
 const agent = new https.Agent({
     rejectUnauthorized: false
 });
+
+
 export const signIn = async (email, password) => {
     const response = await POST(
         `${loginUrl}` + `?email=` + `${email}` + `&password=` + `${password}`,
