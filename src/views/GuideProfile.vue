@@ -37,7 +37,7 @@
                 <i class="fa fa-star" style="color: #ffda2f;"></i>
               </div>
             </div>
-            <button class="createbtn">
+            <button class="createbtn" @click="lol">
               <i class="fa-hand-peace-o"></i>Hire guide for 10000 ₸
             </button>
           </div>
@@ -122,7 +122,7 @@ export default {
   },
   methods: {
     lol(){
-      window.open("https://api.paybox.money/pay.html?customer=4b6beac749a85267c176720e81d68167", "_blank")
+      window.open("https://api.paybox.money/pay.html?customer=e85fe0df906b48b6b4560d80b4a42d11", "_blank")
     }
   }
 };

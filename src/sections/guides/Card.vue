@@ -15,6 +15,7 @@
       <div class="text-center">
         <div class="row" style="margin: auto">
           <!--          <div class="col-lg-3 col-md-6">-->
+
           <div
               v-for="guide in filteredGuides"
               :class="[{ professional: guide.professional }]"
@@ -23,17 +24,23 @@
                margin: 120px 25px 10px;
                height: auto;
                padding: 30px;
-               width: 300px;"
+               width: 300px;
+               "
           >
+
             <div class="" >
               <img :src="guide.imgUrl" alt="" class="img-fluid" @click.alt="alert('sadsadad ')"/>
-              <h3>{{ guide.firstName + " " + guide.lastName }}</h3>
+              <router-link to="/guide">
+                <h3>{{ guide.firstName + " " + guide.lastName }}</h3>
+              </router-link>
               <h5>{{ guide.position }}</h5>
               <p>
                 {{ guide.legend }}
               </p>
             </div>
+
           </div>
+
           <!--          </div>-->
         </div>
       </div>
@@ -99,6 +106,7 @@ export default {
 <style scoped>
 * {
   padding: 0;
+
 }
 
 .main {

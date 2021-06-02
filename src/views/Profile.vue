@@ -93,7 +93,7 @@ export default {
       email: this.$store.state.user.email,
       imgUrl:
           "https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png",
-      tabs: ["Review", "Settings", "Offers"],
+      tabs: ["Review", "Settings",],
       selected: "Review"
     };
   },
