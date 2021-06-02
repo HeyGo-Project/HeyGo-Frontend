@@ -25,8 +25,8 @@
                padding: 30px;
                width: 300px;"
           >
-            <div class="">
-              <img :src="guide.imgUrl" alt="" class="img-fluid"/>
+            <div class="" >
+              <img :src="guide.imgUrl" alt="" class="img-fluid" @click.alt="alert('sadsadad ')"/>
               <h3>{{ guide.firstName + " " + guide.lastName }}</h3>
               <h5>{{ guide.position }}</h5>
               <p>
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Card",
   computed: {
@@ -54,11 +56,43 @@ export default {
       })
     }
   },
+  mounted() {
+    axios.get(
+      "/gateway-client/root-service/guides",
+      null
+    )
+      .then(res => {
+      for (let i = 0; i < res.data.length; i++){
+
+        axios.get(
+          "/gateway-client/root-service/clients/"+res.data[i].clientId,
+          null
+        )
+          .then(res => {
+            console.log(res.data);
+            this.$store.state.guides = res
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
   data() {
     return {
       search: '',
     }
   }
+
+
+
+
+
+  // axios.get("/gateway-client/root-service/"+res.data.clientId ).then(res => {
 };
 </script>
 

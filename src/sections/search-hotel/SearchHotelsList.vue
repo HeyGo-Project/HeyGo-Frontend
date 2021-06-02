@@ -2,9 +2,9 @@
   <div>
     <div class="hotel-container">
       <div
-          v-for="hotels in searchData"
-          :key="hotels.city"
-          class="hotel-list"
+        v-for="hotels in searchData"
+        :key="hotels.city"
+        class="hotel-list"
       >
         <img :src="hotels.imgUrl" alt=""/>
         <div class="details">

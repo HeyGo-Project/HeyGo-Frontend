@@ -69,10 +69,6 @@ export default {
           text: "Profile"
         },
         {
-          link: "/about",
-          text: "About"
-        },
-        {
           link: "/payment/check",
           text: "Check payment"
         },

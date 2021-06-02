@@ -92,7 +92,6 @@
                 <input
                     id="formatDate"
                     type="date"
-                    max='2021-01-01'
                     name="formatDate"
                     class="form-control bg-white border-md border-left-0 pl-3"
                     v-model="date"
@@ -144,11 +143,12 @@
                 </div>
                 <input
                     id="passwordConfirmation"
-                    type="text"
+                    type="password"
                     name="passwordConfirmation"
                     placeholder="Confirm Password"
                     minlength="6"
                     maxlength="16"
+                    v-model="secondPassword"
                     class="form-control bg-white border-left-0 border-md"
                 />
               </div>
@@ -167,6 +167,7 @@
               </div>
             </div>
           </form>
+
         </div>
       </div>
     </div>
@@ -185,21 +186,31 @@ export default {
       gender: '',
       date: '',
       password: '',
+      secondPassword:'',
     }
   },
   computed: {},
   methods: {
     registerUser() {
-      this.$store.dispatch('registerUser', {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        gender: this.gender,
-        email: this.email,
-        password: this.password,
-      }).then(response => {
-            this.$router.push('/')
+      if (this.password === this.secondPassword){
+        this.$store.dispatch('registerUser', {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          gender: this.gender,
+          email: this.email,
+          password: this.password,
+        }).then(response => {
+            if (this.password !== this.secondPassword){
+              alert("Password should be the same")
+            }else {
+              this.$router.push('/')
+            }
           }
-      )
+        )
+      }else{
+        alert("Passwords should be the same!")
+      }
+
     }
   }
 };

@@ -30,7 +30,7 @@
               </p>
             </div>
             <router-link to="/request">
-              <button v-if="this.$store.state.user.verified" class="createbtn">
+              <button  class="createbtn">
                 Become a guide
               </button>
             </router-link>

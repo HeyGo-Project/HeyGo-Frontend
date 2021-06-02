@@ -82,7 +82,7 @@
         <button style="background: #17a2b8;
          float: left;
          margin-top: 30px;
-         color: white;" class="btn submit-btn"
+         color: white;" class="btn submit-btn" @click="lol"
         >
           Check availability
         </button>
@@ -119,13 +119,45 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Checkout",
+  beforeCreate() {
+    axios
+      .get(
+        "/gateway-client/root-service/clients/token",
+        {
+          headers: {
+            token: `${this.$store.state.token}`
+          }
+        }
+      )
+      .then(res => {
+        this.$store.state.user = {
+          id: res.data.id,
+          email: res.data.email,
+          birthDate: res.data.birthDate,
+          lastName: res.data.lastName,
+          firstName: res.data.firstName,
+          gender: res.data.gender,
+          verified: res.data.verified
+        };
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
   data(){
     return{
       name: this.$store.state.user.firstName,
       lastName: this.$store.state.user.lastName,
       email: this.$store.state.user.email
+    }
+  },
+  methods:{
+    lol(){
+      window.open("https://api.paybox.money/pay.html?customer=4b6beac749a85267c176720e81d68167", "_blank")
     }
   }
 }

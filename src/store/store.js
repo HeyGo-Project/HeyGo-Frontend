@@ -9,7 +9,13 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         error: null,
+        salt: '',
+        paymentStatus:'',
         token: cookie.get("accessToken") || null,
+        priceData:{
+          id: 0,
+          price: 0.0,
+        },
         user: {
             id: 0,
             email: '',
@@ -24,10 +30,9 @@ export const store = new Vuex.Store({
             {
                 imgUrl:
                     "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
-                firstName: "Alisher",
-                lastName: "Zharmukhambetov",
-                position: "Professional guide",
-                professional: true,
+                firstName: "Alibek",
+                lastName: "Kerimkulov",
+                position: "Guide",
                 legend: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
             },
             {
@@ -35,8 +40,7 @@ export const store = new Vuex.Store({
                     "https://www.indiewire.com/wp-content/uploads/2020/12/lord-of-rings-1.png",
                 firstName: "Yelzhas",
                 lastName: "Sultanov",
-                position: "Professional guide",
-                professional: false,
+                position: "Guide",
                 legend: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
             },
             {
@@ -44,19 +48,9 @@ export const store = new Vuex.Store({
                     "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
                 firstName: "Alisher",
                 lastName: "Zharmukhambetov",
-                position: "Professional guide",
-                professional: false,
+                position: "Guide",
                 legend: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
             },
-            {
-                imgUrl:
-                    "https://i.kinja-img.com/gawker-media/image/upload/gd8ljenaeahpn0wslmlz.jpg",
-                firstName: "Alisher",
-                lastName: "Zharmukhambetov",
-                position: "Professional guide",
-                professional: true,
-                legend: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-            }
         ]
     },
     getters: {

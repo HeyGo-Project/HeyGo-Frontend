@@ -79,8 +79,7 @@
           </div>
 
         </div>
-
-        <button class="vanilla-btn">
+        <button class="vanilla-btn" @click="lol">
           Reserve
         </button>
       </div>
@@ -105,9 +104,12 @@ export default {
       let bigImg = document.getElementById("bigImage");
       bigImg.src = img.src;
       event.preventDefault();
+    },
+    lol(){
+      window.open("https://api.paybox.money/pay.html?customer=4b6beac749a85267c176720e81d68167", "_blank")
+
     }
   },
-
   data() {
     return {
       advantages: [
@@ -126,7 +128,7 @@ export default {
         {src: "/img/hotelimg/h4.jpg"},
       ],
       about: "ADVANCE SAVER BKFST Special savings advance\\npurchase. Includes breakfast for one or two\\nSTANDARD ROOM NS CONTEMPORARY STYLED DOUBLE",
-      location: "Almaty • Show om map • 900 m from centre",
+      location: "Madrid • Show om map • 900 m from centre",
     }
   },
 }
